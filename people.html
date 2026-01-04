@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>著名人物 - 中国古代建筑成就</title>
+    <style>
+        /* 全局样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", "SimHei", sans-serif;
+        }
+        
+        body {
+            background-color: #f8f5f0;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #8a6642;
+            transition: color 0.3s;
+        }
+        
+        a:hover {
+            color: #6b4f35;
+        }
+        
+        /* 头部样式 */
+        header {
+            background: linear-gradient(to right, #8B668B, #9370DB);
+            color: #fff;
+            padding: 1.5rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        header h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        nav a {
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        nav a:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            nav {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+            
+            nav a {
+                width: 80%;
+                text-align: center;
+                margin: 0.3rem 0;
+            }
+        }
+        
+        /* 主内容区样式 */
+        section {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+        
+        h2 {
+            text-align: center;
+            font-size: 2rem;
+            color: #8a6642;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: #8a6642;
+        }
+        
+        /* 标题样式 */
+        h3 {
+            font-size: 1.5rem;
+            color: #8a6642;
+            margin: 1.5rem 0 1rem;
+            padding-left: 1rem;
+            border-left: 4px solid #8a6642;
+            line-height: 1.4;
+        }
+        
+        /* 文字行间距和颜色 */
+        p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        
+        h4 {
+            font-size: 1.3rem;
+            color: #8b4513;
+            margin: 1rem 0 0.5rem;
+        }
+
+        /* 人物轮播图样式 */
+        .people-carousel-container {
+            width: 100%;
+            max-width: 900px;
+            margin: 2rem auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .people-carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            height: 500px;
+        }
+
+        .people-slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+         }
+
+        .people-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background-color: #f5f2e9;
+        }
+
+        /* 轮播图文字颜色 */
+        .people-slide-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            color: white !important;
+            padding: 1.5rem 1.5rem 2.5rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.7);
+            min-height: 120px; /* 统一最小高度 */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end; /* 内容底部对齐 */
+            z-index: 5; /* 确保文字在圆点之上 */
+        }
+
+        .people-slide-title {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            color: white !important;
+            font-weight: 600;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+            letter-spacing: 0.5px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2; /* 最多显示2行 */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .people-slide-desc {
+            font-size: 1rem;
+            opacity: 0.95;
+            line-height: 1.4;
+            color: rgba(255, 255, 255, 0.95) !important;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+            margin-bottom: 0.3rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 3; /* 最多显示3行 */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .people-controls {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            transform: translateY(-50%);
+            display: flex;
+            justify-content: space-between;
+            padding: 0 1rem;
+            z-index: 10;
+        }
+        
+        .people-btn {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+        
+        .people-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: scale(1.1);
+        }
+        
+        .people-dots {
+            position: absolute;
+            bottom: 15px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            z-index: 10;
+        }
+        
+        .people-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .people-dot.active {
+            background: white;
+            transform: scale(1.2);
+        }
+        
+        .people-counter {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.6);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            z-index: 10;
+        }
+        
+        /* 介绍卡片样式 */
+        .intro-card {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin: 2rem 0;
+            border-left: 5px solid #8a6642;
+        }
+        
+        /* 内容详情样式 */
+        .content-detail {
+            margin: 3rem 0;
+        }
+        
+        /* 人物卡片样式 */
+        .person-card {
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            margin: 1.5rem 0;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .person-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+        
+        .person-info, .person-achievement {
+            flex: 1;
+        }
+        
+        /* 人物网格布局 */
+        .people-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.8rem;
+            margin: 2.5rem 0;
+        }
+
+        .people-item {
+            background: white;
+            padding: 1.8rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-left: 4px solid #d2b48c;
+            transition: all 0.3s ease;
+            line-height: 1.7;
+        }
+
+        .people-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        .people-item h4 {
+            color: #8b4513;
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .people-item p {
+            margin: 1rem 0;
+            text-align: justify;
+            color: #555;
+            font-size: 1.05rem;
+        }
+
+        .people-name {
+            font-weight: 600;
+            color: #8b4513;
+            display: inline-block;
+            margin-right: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        .people-era {
+            display: inline-block;
+            background: #e6d8c4;
+            color: #8b4513;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        /* 人物详情样式 */
+        .person-detail {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            margin: 2.5rem 0;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            line-height: 1.8;
+        }
+
+        .person-detail h3 {
+            color: #8a6642;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid #f0e6d6;
+        }
+
+        .person-detail p {
+            color: #555;
+            margin: 1.2rem 0;
+            text-align: justify;
+            font-size: 1.05rem;
+        }
+
+        .person-detail img {
+            margin: 2rem auto;
+            display: block;
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            padding: 1rem;
+            background: #f9f5f0;
+        }
+
+        /* 优化列表 */
+        .person-detail ul {
+            padding-left: 0;
+            margin: 2rem 0;
+            list-style: none;
+        }
+
+        .person-detail li {
+            margin-bottom: 1.5rem;
+            padding: 1.2rem 1.5rem 1.2rem 3rem;
+            position: relative;
+            line-height: 1.7;
+            text-align: justify;
+            background: #f9f5f0;
+            border-radius: 8px;
+            border-left: 4px solid #d2b48c;
+            transition: all 0.3s ease;
+        }
+
+        .person-detail li:hover {
+            background: #f5f0e6;
+            transform: translateX(5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .person-detail li:before {
+            content: "●";
+            color: #8a6642;
+            position: absolute;
+            left: 1.5rem;
+            font-size: 1.2em;
+            font-weight: bold;
+            top: 1.2rem;
+        }
+
+        .person-detail li strong {
+            color: #8b4513;
+            font-weight: 600;
+            display: inline-block;
+            min-width: 120px;
+            margin-right: 0.8rem;
+            font-size: 1.05rem;
+            letter-spacing: 0.5px;
+        }
+        
+        /* 图片画廊样式 */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .gallery-item {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: contain;
+        }
+
+        .image-caption {
+            padding: 1rem;
+            text-align: center;
+            color: #666;
+            font-size: 0.95rem;
+        }
+        
+        /* 页脚样式 */
+        footer {
+            background-color: #8B668B;
+            color: #f8f5f0;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .people-carousel {
+                height: 400px;
+            }
+            
+            .people-carousel-container {
+                border-radius: 8px;
+            }
+            
+            .people-slide-info {
+                padding: 1.5rem 1rem 1rem;
+            }
+            
+            .people-slide-title {
+                font-size: 1.2rem;
+            }
+            
+            .person-card {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>著名人物</h1>
+    <nav>
+        <a href="index.html">首页</a>
+        <a href="religion.html">宗教建筑</a>
+        <a href="palace.html">宫殿建筑</a>
+        <a href="garden.html">园林建筑</a>
+        <a href="defense.html">防御建筑</a>
+        <a href="technique.html">材料与技术</a>
+        <a href="people.html">著名人物</a>
+        <a href="contact.html">参考与联系</a>
+    </nav>
+</header>
+
+<section>
+    <h2>中国古代建筑大师</h2>
+    
+    <!-- 人物轮播图 -->
+<div class="people-carousel-container">
+    <div class="people-carousel" id="peopleCarousel">
+        <!-- 图片1 - 李诫画像 -->
+        <div class="people-slide">
+            <img src="images/li_jie_portrait.png" alt="李诫画像" class="people-image">
+            <div class="people-slide-info">
+                <h3 class="people-slide-title">李诫 - 《营造法式》作者</h3>
+                <p class="people-slide-desc">宋代建筑学家李诫（1035-1110），字明仲，编著了中国第一部建筑规范专著《营造法式》，系统总结了宋代以前的建筑技术和经验，对后世建筑产生了深远影响。</p>
+            </div>
+        </div>
+        
+        <!-- 图片2 - 《营造法式》封面 -->
+        <div class="people-slide">
+            <img src="images/ying_zao_fa_shi.png" alt="《营造法式》封面" class="people-image">
+            <div class="people-slide-info">
+                <h3 class="people-slide-title">《营造法式》- 建筑技术典籍</h3>
+                <p class="people-slide-desc">宋代李诫编著的中国古代最完整的建筑技术书籍，详细记录了建筑设计、材料选用、施工工艺等方面的规范，是研究中国古代建筑的重要文献。</p>
+            </div>
+        </div>
+        
+        <!-- 图片3 - 样式雷家族世系图 -->
+        <div class="people-slide">
+            <img src="images/yang_shi_lei_family_tree.jpg" alt="样式雷家族世系图" class="people-image">
+            <div class="people-slide-info">
+                <h3 class="people-slide-title">样式雷家族世系图</h3>
+                <p class="people-slide-desc">清代著名建筑世家样式雷家族传承脉络，从雷发达（1619-1693）到清末，八代人服务皇家建筑达200余年，设计紫禁城、颐和园等重要建筑。</p>
+            </div>
+        </div>
+        
+        <!-- 图片4 - 样式雷烫样模型 -->
+        <div class="people-slide">
+            <img src="images/tang_yang_model.png" alt="样式雷烫样模型" class="people-image">
+            <div class="people-slide-info">
+                <h3 class="people-slide-title">样式雷烫样模型</h3>
+                <p class="people-slide-desc">样式雷家族制作的建筑烫样（模型），用于皇家建筑设计。烫样技艺可追溯至唐宋，成熟于清代，圆明园、颐和园等建筑均使用过烫样设计。</p>
+            </div>
+        </div>
+        
+        <!-- 图片5 - 梁思成照片 -->
+        <div class="people-slide">
+            <img src="images/liang_sicheng_photo.png" alt="梁思成照片" class="people-image">
+            <div class="people-slide-info">
+                <h3 class="people-slide-title">梁思成 - 建筑史学家</h3>
+                <p class="people-slide-desc">中国著名建筑史学家梁思成（1901-1972），中国古建筑研究的奠基人，系统调查和研究了中国古代建筑，编写了《中国建筑史》等著作。</p>
+            </div>
+        </div>
+        
+        <!-- 图片6 - 梁思成测绘与研究 -->
+        <div class="people-slide">
+            <img src="images/liang_sicheng_research.png" alt="梁思成测绘与研究" class="people-image">
+            <div class="people-slide-info">
+                <h3 class="people-slide-title">梁思成测绘与研究</h3>
+                <p class="people-slide-desc">梁思成对山西大同善化寺等古建筑的测绘记录，展现了他对中国古建筑的系统调查和深入研究，为古建筑保护做出了巨大贡献。</p>
+            </div>
+        </div>
+    </div>
+        
+        <div class="people-counter">
+            <span id="currentPeopleSlide">1</span> / <span id="totalPeopleSlides">6</span>
+        </div>
+        
+        <div class="people-controls">
+            <button class="people-btn" id="prevPeopleBtn">‹</button>
+            <button class="people-btn" id="nextPeopleBtn">›</button>
+        </div>
+        
+        <div class="people-dots">
+            <button class="people-dot active" data-index="0"></button>
+            <button class="people-dot" data-index="1"></button>
+            <button class="people-dot" data-index="2"></button>
+            <button class="people-dot" data-index="4"></button>
+            <button class="people-dot" data-index="5"></button>
+            <button class="people-dot" data-index="6"></button>
+        </div>
+    </div>
+    
+    <div style="text-align: center; margin: 1rem 0; color: #666;">
+        <p>使用左右箭头切换图片，查看不同建筑大师的详细资料</p>
+    </div>
+    
+    <div class="intro-card">
+        <p>中国古代建筑史上涌现出许多杰出的建筑师和工匠，他们以精湛的技艺和卓越的智慧，创造了无数建筑奇迹。从《营造法式》的作者李诫，到设计紫禁城的样式雷家族，再到无数默默无闻的工匠，他们共同书写了中国建筑史的辉煌篇章。</p>
+        <p>中国古代建筑大师不仅精通建筑技术，还往往博学多才，在书法、绘画、音乐等方面也有深厚造诣。他们的作品不仅体现了高超的建筑技艺，还蕴含着深厚的文化内涵和审美价值。</p>
+    </div>
+    
+    <!-- 主要人物分类 -->
+    <div class="content-detail">
+        <h3>建筑大师分类</h3>
+        <p>中国古代建筑大师根据其时代背景、专业领域和贡献特点，可以分为以下几类：</p>
+        
+        <div class="people-grid">
+            <div class="people-item">
+                <h4><span class="people-name">理论奠基者</span><span class="people-era">宋代</span></h4>
+                <p>以李诫为代表，通过编撰建筑规范著作，系统总结建筑理论和技术，为后世建筑实践提供理论指导。</p>
+            </div>
+            
+            <div class="people-item">
+                <h4><span class="people-name">皇家建筑师</span><span class="people-era">明清</span></h4>
+                <p>以样式雷家族为代表，专门为皇室设计建造宫殿、园林、陵寝等建筑，作品规模宏大，技艺精湛。</p>
+            </div>
+            
+            <div class="people-item">
+                <h4><span class="people-name">城市规划师</span><span class="people-era">隋唐</span></h4>
+                <p>以宇文恺为代表，主持规划设计都城和重要城市，对城市布局和功能分区有深入研究。</p>
+            </div>
+            
+            <div class="people-item">
+                <h4><span class="people-name">技术革新者</span><span class="people-era">历代</span></h4>
+                <p>在各个时期推动建筑技术发展的工匠和建筑师，如蒯蒯祥等，他们在木构、砖石、彩画等方面有重要创新。</p>
+            </div>
+            
+            <div class="people-item">
+                <h4><span class="people-name">研究保护者</span><span class="people-era">近现代</span></h4>
+                <p>以梁思成为代表，系统研究、记录和保护中国古代建筑，为传统建筑文化的传承做出重要贡献。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 李诫详情 -->
+    <div class="person-detail">
+        <h3>李诫 - 建筑理论的奠基者</h3>
+        <p>李诫（1035-1110），字明仲，北宋郑州管城（今河南郑州）人。他出身官宦世家，曾任将作监主簿、将作监丞等职，主持修建了多项重大工程。李诫不仅是一位杰出的建筑师，还是一位博学的学者，精通书法、绘画、音乐等。</p>
+        
+        <div class="person-card">
+            <div class="person-info">
+                <h4>生平简介</h4>
+                <p>李诫出生于北宋官宦世家，其父李南公曾任户部侍郎。李诫自幼聪颖好学，博览群书，对建筑、工艺有浓厚兴趣。元丰八年（1085年），李诫任将作监主簿，开始参与皇家工程建设。在任职期间，他主持修建了开封龙德宫、棣华宅、朱雀门、景龙门等建筑，展现了卓越的建筑才能。</p>
+                <p>李诫在建筑实践中深感当时建筑规范不统一、施工效率低下的问题，于是决心编撰一部系统的建筑规范。经过多年努力，于绍圣四年（1097年）完成了《营造法式》的编撰工作。这部著作系统总结了宋代以前的建筑技术和经验，对后世建筑产生了深远影响。</p>
+            </div>
+            
+            <div class="person-achievement">
+                <h4>主要成就</h4>
+                <ul>
+                    <li><strong>《营造法式》</strong>中国第一部建筑规范专著，系统总结了宋代以前的建筑技术和经验。</li>
+                    <li><strong>工程实践</strong>主持修建了开封龙德宫、棣华宅、朱雀门、景龙门等建筑。</li>
+                    <li><strong>技术标准化</strong>将建筑技术标准化，提高了施工效率和质量。</li>
+                    <li><strong>影响深远</strong>《营造法式》对后世建筑产生了深远影响，被誉为“中国建筑史上的里程碑”。</li>
+                    <li><strong>多才多艺</strong>除了建筑，李诫还精通书法、绘画、音乐等，是宋代著名的博学之士。</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 样式雷家族详情 -->
+    <div class="person-detail">
+        <h3>样式雷家族 - 皇家建筑的巨匠</h3>
+        <p>样式雷是清代著名的建筑世家，从康熙年间到清末，雷氏家族七代人在内务府样式房担任掌案，主持设计了紫禁城、颐和园、承德避暑山庄、清东陵、清西陵等皇家建筑。雷发达是样式雷家族的创始人，其后代雷金玉、雷声澂、雷家玺、雷景修、雷思起、雷廷昌等，都是杰出的建筑师。</p>
+            
+    <!-- 插入样式雷世系图 -->
+            <div style="margin-top: 1.5rem;">
+                <img src="images/yang_shi_lei_generations.png" alt="样式雷家族世系图" 
+                     style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin-bottom: 0.5rem;">
+                <p style="color: #666; font-size: 0.9rem;">样式雷家族世系图，展示了从第一代雷发达（1619-1693）到第八代雷献彩的完整家族传承</p>
+       
+        <div class="person-card">
+            <div class="person-info">
+                <h4>家族传承</h4>
+                <p>样式雷家族的建筑事业始于雷发达（1619-1693），他原是江西南康府的木匠，康熙年间被征召入京参与皇宫建设。雷发达技艺精湛，很快在众多工匠中脱颖而出，被任命为样式房掌案，负责皇家建筑设计。</p>
+                <p>雷发达之后，其子雷金玉继承父业，在康熙、雍正年间主持多项重要工程。雷氏家族的建筑事业代代相传，直至清末雷廷昌，共七代人服务皇家建筑达200余年。样式雷家族不仅技艺高超，还善于创新，将南方建筑技艺与北方皇家建筑风格完美结合。</p>
+            </div>
+  
+                <h4>样式雷烫样技艺</h4>
+                <p>烫样技艺可追溯至唐宋时期，在清代达到成熟，尤其以皇家建筑为代表。样式雷家族制作的烫样尤为著名，被称为"样式雷烫样"。这些精美的建筑模型用于皇家建筑设计方案的展示和修改。</p>
+                <p>样式雷烫样在圆明园、颐和园、故宫等建筑的设计中均有使用，现部分珍藏于故宫博物院和国家图书馆。烫样不仅展示了建筑的外观，还体现了内部结构和装饰细节，是研究清代建筑的重要实物资料。</p>
+            </div>
+          
+            <div class="person-achievement compact-list">
+                <h4>主要成就</h4>
+                <ul>
+                    <li><strong>紫禁城设计</strong>主持设计紫禁城，包括太和殿、中和殿、保和殿等主要建筑</li>
+                    <li><strong>皇家园林</strong>设计颐和园，将江南园林艺术与皇家园林相结合</li>
+                    <li><strong>避暑山庄</strong>设计承德避暑山庄，融合了汉族、蒙古族、藏族等民族建筑风格</li>
+                    <li><strong>皇家陵寝</strong>设计清东陵、清西陵，体现了清代皇家陵寝的建筑艺术</li>
+                    <li><strong>图样档案</strong>留下了大量建筑图样、烫样（建筑模型）和档案，为研究清代建筑提供了珍贵资料</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 其他著名人物 -->
+    <div class="content-detail">
+        <h3>其他著名人物</h3>
+        
+        <div class="people-grid">
+            <div class="people-item">
+                <h4><span class="people-name">宇文恺</span><span class="people-era">隋代</span></h4>
+                <p>隋代著名建筑师，主持修建了大兴城（今西安）和东都洛阳。他规划设计的城市布局严谨，功能分区明确，对后世城市规划产生了深远影响。宇文恺精通建筑、水利、机械等多方面知识，是隋代最杰出的工程师之一。</p>
+            </div>
+            
+            <div class="people-item">
+                <h4><span class="people-name">蒯蒯祥</span><span class="people-era">明代</span></h4>
+                <p>明代著名建筑师，参与修建北京紫禁城，被誉为"蒯蒯鲁班"。他精通木工技艺，设计建造了天安门、太和殿等建筑。蒯蒯祥出身木匠世家，技艺世代相传，对明代官式建筑的发展有重要贡献。</p>
+            </div>
+            
+            <div class="people-item">
+                <h4><span class="people-name">梁思成</span><span class="people-era">现代</span></h4>
+                <p>现代著名建筑学家，中国古建筑研究的奠基人。他系统调查和研究了中国古代建筑，编写了《中国建筑史》《营造法式注释》等著作，为中国古建筑的保护和研究做出了巨大贡献。梁思成也是中国现代建筑教育的开创者之一。</p>
+            </div>
+        </div>
+    </div>
+
+<!-- 重要文献与实物资料 -->
+<div class="content-detail">
+    <h3>重要文献与实物资料</h3>
+    <p>中国古代建筑大师留下了丰富的文献和实物资料，这些珍贵的遗产为我们研究古代建筑提供了重要依据。</p>
+    
+    <div class="image-gallery">
+        <div class="gallery-item">
+            <img src="images/ying_zao_fa_shi_2.png" alt="《营造法式》书籍封面">
+            <p class="image-caption">《营造法式》书籍封面 - 宋代李诫编著</p>
+        </div>
+        <div class="gallery-item">
+            <img src="images/tang_yang_model.png" alt="样式雷烫样模型">
+            <p class="image-caption">样式雷烫样模型 - 清代皇家建筑设计实物</p>
+        </div>
+        <div class="gallery-item">
+            <img src="images/liang_sicheng_research.png" alt="梁思成测绘研究资料">
+            <p class="image-caption">梁思成测绘研究资料 - 现代古建筑研究记录</p>
+        </div>
+    </div>
+    
+    <div class="person-card">
+        <div class="person-info">
+            <h4>文献资料</h4>
+            <p><strong>《营造法式》</strong>：宋代李诫编著，是中国古代最完整的建筑技术书籍，详细记录了宋代建筑的设计规范、施工工艺和材料标准。</p>
+            <p><strong>样式雷图档</strong>：样式雷家族留下的建筑图样、烫样和档案，包括设计方案、施工图纸等，是研究清代皇家建筑的重要资料。</p>
+        </div>
+        
+        <div class="person-achievement">
+            <h4>实物资料</h4>
+            <p><strong>样式雷烫样</strong>：清代皇家建筑设计的实物模型，制作精美，展现了建筑的内部结构和装饰细节，现存于故宫博物院。</p>
+            <p><strong>梁思成测绘记录</strong>：梁思成对全国各地古建筑的调查测绘资料，包括图纸、照片和文字记录，为古建筑保护提供了重要依据。</p>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- 音频播放器（放在所有页面的footer之前） -->
+<div id="music-player" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000; background: rgba(0,0,0,0.8); color: white; padding: 10px; border-radius: 10px; display: none;">
+    <audio id="bgm" loop preload="auto" style="display: none;">
+        <source src="music/background_music.mp3" type="audio/mpeg">
+        您的浏览器不支持音频播放
+    </audio>
+    
+    <div style="display: flex; align-items: center; gap: 10px;">
+        <button id="playPauseBtn" style="background: #8B4513; color: white; border: none; width: 30px; height: 30px; border-radius: 50%; cursor: pointer;">
+            ▶
+        </button>
+        <span id="music-title" style="font-size: 12px;">古风合辑</span>
+        <button id="volumeToggleBtn" style="background: none; border: none; color: white; cursor: pointer; font-size: 16px;">
+            🔈
+        </button>
+        <div id="volumeControl" style="display: none;">
+            <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="0.3" style="width: 60px;">
+        </div>
+    </div>
+</div>
+
+<!-- 音乐控制按钮（固定在页面右下角） -->
+<button id="music-toggle" style="
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #8B4513;
+    color: white;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;">
+    🎵
+</button>
+
+<footer>© 2026 中国古代建筑成就</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('人物轮播图初始化开始...');
+    
+    // 修复选择器
+    const peopleCarousel = document.getElementById('peopleCarousel');
+    const peopleSlides = document.querySelectorAll('.people-slide');
+    const peopleDots = document.querySelectorAll('.people-dot');
+    const prevPeopleBtn = document.getElementById('prevPeopleBtn');
+    const nextPeopleBtn = document.getElementById('nextPeopleBtn');
+    const currentPeopleSlideSpan = document.getElementById('currentPeopleSlide');
+    const totalPeopleSlidesSpan = document.getElementById('totalPeopleSlides');
+    
+    // 调试信息
+    console.log('找到的人物轮播图元素:', {
+        carousel: peopleCarousel,
+        slides: peopleSlides.length,
+        dots: peopleDots.length,
+        prevBtn: prevPeopleBtn,
+        nextBtn: nextPeopleBtn
+    });
+    
+    if (!peopleCarousel || !prevPeopleBtn || !nextPeopleBtn) {
+        console.error('人物轮播图元素未找到！请检查ID是否正确');
+        return;
+    }
+    
+    let currentPeopleIndex = 0;
+    const totalPeopleSlides = peopleSlides.length;
+    
+    if (totalPeopleSlidesSpan) {
+        totalPeopleSlidesSpan.textContent = totalPeopleSlides;
+    }
+    
+    // 更新轮播图位置
+    function updatePeopleCarousel() {
+        peopleCarousel.style.transform = `translateX(-${currentPeopleIndex * 100}%)`;
+        if (currentPeopleSlideSpan) {
+            currentPeopleSlideSpan.textContent = currentPeopleIndex + 1;
+        }
+        
+        // 更新圆点状态
+        peopleDots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentPeopleIndex);
+        });
+    }
+    
+    // 下一张
+    function nextPeopleSlide() {
+        currentPeopleIndex = (currentPeopleIndex + 1) % totalPeopleSlides;
+        updatePeopleCarousel();
+    }
+    
+    // 上一张
+    function prevPeopleSlide() {
+        currentPeopleIndex = (currentPeopleIndex - 1 + totalPeopleSlides) % totalPeopleSlides;
+        updatePeopleCarousel();
+    }
+    
+    // 修复事件监听
+    prevPeopleBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        console.log('人物轮播图上一张按钮被点击');
+        prevPeopleSlide();
+    });
+    
+    nextPeopleBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        console.log('人物轮播图下一张按钮被点击');
+        nextPeopleSlide();
+    });
+    
+    // 圆点点击
+    peopleDots.forEach((dot, index) => {
+        dot.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('人物轮播图圆点点击，索引：', index);
+            currentPeopleIndex = index;
+            updatePeopleCarousel();
+        });
+    });
+    
+    // 键盘控制
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            prevPeopleSlide();
+        }
+        if (e.key === 'ArrowRight') {
+            e.preventDefault();
+            nextPeopleSlide();
+        }
+    });
+    
+    // 自动轮播
+
+    let peopleAutoPlay = setInterval(nextPeopleSlide, 5000);
+    
+    // 鼠标悬停时暂停自动轮播
+    const peopleContainer = document.querySelector('.people-carousel-container');
+    if (peopleContainer) {
+        peopleContainer.addEventListener('mouseenter', function() {
+            clearInterval(peopleAutoPlay);
+        });
+        
+        peopleContainer.addEventListener('mouseleave', function() {
+            peopleAutoPlay = setInterval(nextPeopleSlide, 5000);
+        });
+    }
+    
+    console.log('人物轮播图初始化完成！');
+});
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // 音乐控制元素
+    const audio = document.getElementById('bgm');
+    const musicPlayer = document.getElementById('music-player');
+    const musicToggle = document.getElementById('music-toggle');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const volumeToggleBtn = document.getElementById('volumeToggleBtn');
+    const volumeControl = document.getElementById('volumeControl');
+    const volumeSlider = document.getElementById('volumeSlider');
+    const musicTitle = document.getElementById('music-title');
+
+    // 从LocalStorage恢复播放状态
+    const isPlaying = localStorage.getItem('bgmPlaying') === 'true';
+    const currentTime = parseFloat(localStorage.getItem('bgmTime') || 0);
+    const volume = parseFloat(localStorage.getItem('bgmVolume') || 0.3);
+    const isMuted = localStorage.getItem('bgmMuted') === 'true';
+    
+    // 初始化设置
+    audio.volume = volume;
+    audio.muted = isMuted;
+    volumeSlider.value = volume;
+    
+    // 恢复播放位置
+    if (currentTime > 0) {
+        audio.currentTime = currentTime;
+    }
+    
+    // 恢复播放状态
+    if (isPlaying) {
+        audio.play().catch(e => console.log('自动播放被阻止:', e));
+        playPauseBtn.textContent = '⏸';
+    }
+    
+    // 更新UI
+    updateVolumeIcon();
+
+    // 播放/暂停控制
+    playPauseBtn.addEventListener('click', function() {
+        if (audio.paused) {
+            audio.play();
+            playPauseBtn.textContent = '⏸';
+            localStorage.setItem('bgmPlaying', 'true');
+        } else {
+            audio.pause();
+            playPauseBtn.textContent = '▶';
+            localStorage.setItem('bgmPlaying', 'false');
+        }
+    });
+    
+    // 显示/隐藏音乐播放器
+    musicToggle.addEventListener('click', function() {
+        if (musicPlayer.style.display === 'none') {
+            musicPlayer.style.display = 'block';
+            musicToggle.style.display = 'none';
+        } else {
+            musicPlayer.style.display = 'none';
+        }
+    });
+    
+    // 显示/隐藏音量控制
+    volumeToggleBtn.addEventListener('click', function() {
+        volumeControl.style.display = volumeControl.style.display === 'none' ? 'block' : 'none';
+    });
+    
+    // 音量控制
+    volumeSlider.addEventListener('input', function() {
+        audio.volume = this.value;
+        localStorage.setItem('bgmVolume', this.value);
+        audio.muted = false;
+        updateVolumeIcon();
+    });
+    
+    // 静音切换
+    volumeToggleBtn.addEventListener('click', function(e) {
+        if (e.target !== volumeToggleBtn) return; // 防止与音量控制冲突
+        
+        audio.muted = !audio.muted;
+        localStorage.setItem('bgmMuted', audio.muted);
+        updateVolumeIcon();
+    });
+    
+    // 保存播放时间
+    audio.addEventListener('timeupdate', function() {
+        if (!audio.paused) {
+            localStorage.setItem('bgmTime', audio.currentTime);
+        }
+    });
+    
+    // 页面关闭前保存状态
+    window.addEventListener('beforeunload', function() {
+        localStorage.setItem('bgmTime', audio.currentTime);
+        localStorage.setItem('bgmPlaying', !audio.paused);
+    });
+    
+    // 更新音量图标
+    function updateVolumeIcon() {
+        if (audio.muted || audio.volume === 0) {
+            volumeToggleBtn.innerHTML = '🔇';
+        } else if (audio.volume < 0.5) {
+            volumeToggleBtn.innerHTML = '🔈';
+        } else {
+            volumeToggleBtn.innerHTML = '🔊';
+        }
+    }
+    
+    // 自动播放处理
+    function tryAutoPlay() {
+        if (isPlaying) {
+            audio.play().then(() => {
+                console.log('背景音乐已自动播放');
+            }).catch(e => {
+                console.log('自动播放被阻止，需要用户交互');
+                // 显示提示
+                musicTitle.innerHTML = '点击播放按钮播放音乐';
+            });
+        }
+    }
+    
+    // 用户首次交互后尝试播放
+    document.addEventListener('click', function firstInteraction() {
+        if (audio.paused && isPlaying) {
+            audio.play();
+            playPauseBtn.textContent = '⏸';
+        }
+        document.removeEventListener('click', firstInteraction);
+    }, { once: true });
+    
+    // 尝试自动播放
+    tryAutoPlay();
+});
+</script>
+</body>
+</html>

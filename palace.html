@@ -1,0 +1,1502 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宫殿建筑 - 中国古代建筑艺术的巅峰</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+        /* 全局样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", "SimHei", sans-serif;
+        }
+        
+        body {
+            background-color: #f8f5f0;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #8a6642;
+            transition: color 0.3s;
+        }
+        
+        a:hover {
+            color: #6b4f35;
+        }
+
+        /* 统一导航栏样式 */
+        header {
+            background: linear-gradient(to right, #B22222, #8B0000);
+            color: #fff;
+            padding: 1.5rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        header h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        nav a {
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        nav a:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+
+        /* 页脚样式 */
+        footer {
+            background-color: #B22222;
+            color: #f8f5f0;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            nav {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+            
+            nav a {
+                width: 80%;
+                text-align: center;
+                margin: 0.3rem 0;
+            }
+        }
+
+        /* 原有样式保留 */
+        .palace-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        .palace-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .palace-card:hover {
+            transform: translateY(-5px);
+        }
+        .palace-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        .palace-info {
+            padding: 20px;
+        }
+        .technical-details {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+        .timeline {
+            position: relative;
+            margin: 40px 0;
+        }
+        .timeline-item {
+            margin: 20px 0;
+            padding-left: 30px;
+            border-left: 3px solid #d4af37;
+        }
+        
+        /* 新增故宫专题样式 */
+.forbidden-city-hero {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                url('images/forbidden_city_banner.jpg') center/cover;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    margin: 40px 0;
+    border-radius: 12px;
+}
+
+.forbidden-city-hero h2 {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.forbidden-city-hero p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+        
+       .layout-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 30px 0;
+            justify-content: center;
+        }
+        
+        .layout-card {
+            width: 350px;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
+        }
+        
+        .layout-card:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            transform: translateY(-5px);
+        }
+        
+        .layout-image-container {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .layout-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .layout-image-container:hover .layout-image {
+            transform: scale(1.05);
+        }
+        
+        .layout-info {
+            padding: 15px;
+        }
+        
+        .layout-tag {
+            display: inline-block;
+            background: #f0f0f0;
+            color: #666;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            margin-right: 5px;
+            margin-bottom: 8px;
+        }
+        
+        .layout-info h3 {
+            margin: 10px 0 8px 0;
+            color: #333;
+            font-size: 18px;
+        }
+        
+        .layout-info p {
+            margin: 0 0 10px 0;
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        /* 故宫实景照片 - 鼠标滑动效果 */
+        .palace-gallery {
+            margin: 40px 0;
+        }
+        
+        .palace-photos {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .photo-item {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            border: 1px solid #eee;
+        }
+        
+        .photo-item:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+        
+        .photo-container {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .photo-slider {
+            display: flex;
+            width: 200%;
+            height: 100%;
+            transition: transform 0.5s ease;
+        }
+        
+        .photo-slide {
+            width: 50%;
+            height: 100%;
+        }
+        
+        .photo-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .photo-description {
+            padding: 15px;
+        }
+        
+        .photo-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .photo-title h4 {
+            margin: 0;
+            color: #333;
+            font-size: 16px;
+        }
+        
+        .photo-tag {
+            display: inline-block;
+            background: #e6f7ff;
+            color: #1890ff;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+        
+        .photo-desc {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+        
+        .hover-hint {
+            display: flex;
+            align-items: center;
+            font-size: 12px;
+            color: #999;
+        }
+        
+        .hover-hint::before {
+            content: "💡";
+            margin-right: 5px;
+        }
+        
+        /* 鼠标触碰区域 */
+        .hover-area {
+            padding: 8px 12px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            margin-top: 10px;
+            cursor: pointer;
+            border: 1px dashed #ddd;
+            transition: all 0.3s ease;
+        }
+        
+        .hover-area:hover {
+            background: #e6f7ff;
+            border-color: #91d5ff;
+        }
+        
+        .hover-area h5 {
+            margin: 0 0 5px 0;
+            color: #666;
+            font-size: 13px;
+        }
+        
+        .hover-area p {
+            margin: 0;
+            color: #888;
+            font-size: 12px;
+        }
+        
+        @media (max-width: 768px) {
+            .layout-card {
+                width: 100%;
+            }
+            
+            .palace-photos {
+                grid-template-columns: 1fr;
+            }
+        }
+        .interactive-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .interactive-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            border: 2px solid #e6e6e6;
+            transition: all 0.3s ease;
+        }
+        
+        .interactive-card:hover {
+            border-color: #d4af37;
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.1);
+        }
+        
+        .construction-video {
+            width: 100%;
+            max-width: 800px;
+            height: 450px;
+            margin: 30px auto;
+            display: block;
+            border-radius: 8px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .stat-item {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border-left: 4px solid #d4af37;
+        }
+        
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .tech-item {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #d4af37;
+        }
+        
+        .cultural-aspects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .aspect {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #d4af37;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #d4af37;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+            border: 2px solid #d4af37;
+        }
+        
+        .cta-button:hover {
+            background: white;
+            color: #d4af37;
+            transform: translateY(-2px);
+        }
+
+/* 新增小红书视频样式 */
+        .xiaohongshu-video {
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        .video-placeholder {
+            width: 100%;
+            max-width: 600px;
+            height: 400px;
+            background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 20px;
+            border: 2px dashed #ddd;
+        }
+        
+        .video-placeholder .icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+            color: #ff2442; /* 小红书红 */
+        }
+        
+        .video-link-button {
+            display: inline-block;
+            background: #ff2442;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .video-link-button:hover {
+            background: #e60023;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 36, 66, 0.3);
+        }
+
+ /* 视频展示区样式 */
+        .video-gallery {
+            margin: 50px 0;
+        }
+        
+        .video-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+        
+        .video-header {
+            background: linear-gradient(135deg, #ff6b6b, #ff2442);
+            color: white;
+            padding: 20px 30px;
+        }
+        
+        .video-header h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.4em;
+        }
+        
+        .video-container {
+            padding: 30px;
+        }
+        
+        .video-wrapper {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        /* 视频播放器样式 */
+        video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .video-desc {
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        
+        .video-source {
+            display: inline-block;
+            background: #f0f0f0;
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 13px;
+            color: #888;
+            margin-top: 10px;
+        }
+        
+        /* 视频控制条美化 */
+        video::-webkit-media-controls-panel {
+            background-color: rgba(0,0,0,0.7);
+        }
+        
+        video::-webkit-media-controls-play-button {
+            background-color: #ff2442;
+            border-radius: 50%;
+        }
+        
+        video::-webkit-media-controls-current-time-display,
+        video::-webkit-media-controls-time-remaining-display {
+            color: white;
+        }
+        
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .video-container {
+                padding: 15px;
+            }
+            
+            .video-header {
+                padding: 15px 20px;
+            }
+            
+            .video-header h3 {
+                font-size: 1.2em;
+            }
+        }
+
+        .fullscreen-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        
+        .fullscreen-modal.active {
+            display: flex;
+        }
+        
+        .fullscreen-image-container {
+            width: 90vw;
+            height: 80vh;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .fullscreen-image {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+        
+        .fullscreen-title {
+            color: white;
+            text-align: center;
+            margin: 20px 0;
+            font-size: 24px;
+        }
+        
+        .fullscreen-controls {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .fullscreen-close {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .fullscreen-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+        
+        .zoom-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .zoom-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .zoom-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .hint-text {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+            margin-top: 10px;
+            text-align: center;
+        }
+        
+        /* 图片初始样式 */
+        .layout-image {
+            cursor: zoom-in;
+            transition: transform 0.3s ease;
+        }
+        
+        .layout-image:hover {
+            transform: scale(1.02);
+        }
+        
+        .click-hint {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            opacity: 0.9;
+        }
+
+        /* 新增样式：优化文字颜色和间距 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .intro {
+            margin-top: 40px; /* 增加顶部间距，使"帝王之居"部分下移 */
+            padding: 30px;
+            background: linear-gradient(135deg, #f9f5f0, #f0e6d8);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-left: 5px solid #d4af37;
+        }
+        
+        .intro h2 {
+            color: #8B0000; /* 使用深红色标题 */
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        .intro p {
+            color: #5a4a3a; /* 使用深棕色文字，增加可读性 */
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .intro p:first-of-type {
+            font-weight: bold;
+            color: #8B0000; /* 第一段使用深红色强调 */
+        }
+        
+        section h2 {
+            color: #8B0000;
+            font-size: 1.8rem;
+            margin: 40px 0 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #d4af37;
+        }
+        
+        .palace-info h3 {
+            color: #8B0000;
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+        
+        .palace-info p {
+            color: #5a4a3a;
+            margin-bottom: 8px;
+        }
+        
+        .palace-info p strong {
+            color: #5D4037;
+        }
+        
+        .timeline-item h3 {
+            color: #8B0000;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .timeline-item p {
+            color: #5a4a3a;
+        }
+        
+        .aspect h4, .tech-item h4 {
+            color: #8B0000;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .aspect p, .tech-item p {
+            color: #5a4a3a;
+        }
+        
+        .stat-item h3 {
+            color: #8B0000;
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+        
+        .stat-item p {
+            color: #5a4a3a;
+            font-weight: bold;
+        }
+        
+        .interactive-card h3 {
+            color: #8B0000;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+        
+        .interactive-card p {
+            color: #5a4a3a;
+            margin-bottom: 20px;
+        }
+
+    </style>
+</head>
+<body>
+<header>
+
+    <h1> 宫殿建筑</h1>
+    <nav>
+        <a href="index.html">首页</a>
+        <a href="religion.html">宗教建筑</a>
+        <a href="palace.html">宫殿建筑</a>
+        <a href="garden.html">园林建筑</a>
+        <a href="defense.html">防御建筑</a>
+        <a href="technique.html">材料与技术</a>
+        <a href="people.html">著名人物</a>
+        <a href="contact.html">参考与联系</a>
+    </nav>
+</header>
+
+<main class="container">
+    <!-- 原有介绍内容 -->
+    <section class="intro">
+        <h2>帝王之居：中国古代宫殿建筑的发展与特色</h2>
+        <p>中国古代宫殿建筑是中国传统建筑中最具代表性、等级最高的建筑类型，集中体现了古代中国的政治制度、礼仪规范、建筑技术和艺术成就。</p>
+    </section>
+
+    <!-- 原有三大宫殿介绍 -->
+    <section class="palace-gallery">
+        <div class="palace-card">
+            
+            <div class="palace-info">
+                <h3>北京故宫（紫禁城）</h3>
+                <p><strong>建造年代：</strong>明永乐四年至十八年（1406-1420年）</p>
+                <p><strong>建筑规模：</strong>占地面积72万平方米，建筑面积约15万平方米</p>
+                <p><strong>特色：</strong>世界上现存规模最大、保存最完整的木质结构古建筑群</p>
+            </div>
+        </div>
+
+        <div class="palace-card">
+            
+            <div class="palace-info">
+                <h3>颐和园</h3>
+                <p><strong>建造年代：</strong>清乾隆十五年（1750年）始建</p>
+                <p><strong>建筑规模：</strong>占地约290公顷，水面约占四分之三</p>
+                <p><strong>特色：</strong>中国现存最完整的皇家园林，集园林艺术之大成</p>
+            </div>
+        </div>
+
+        <div class="palace-card">
+            
+            <div class="palace-info">
+                <h3>布达拉宫</h3>
+                <p><strong>建造年代：</strong>始建于公元7世纪，17世纪重建</p>
+                <p><strong>建筑规模：</strong>主体建筑高117米，共13层</p>
+                <p><strong>特色：</strong>藏式宫堡建筑的杰出代表，世界海拔最高的古代宫殿</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 故宫专题内容 -->
+    <section class="forbidden-city-hero">
+        <h2>紫禁城 - 世界建筑艺术的瑰宝</h2>
+        <p>明清两代皇家宫殿，世界上现存规模最大、保存最完整的木质结构古建筑群</p>
+    </section>
+
+    <!-- 三张平面布局图展示 -->
+      <div class="layout-gallery">
+            <!-- 2D平面图卡片 -->
+            <div class="layout-card">
+                <div class="layout-image-container" style="position: relative;">
+                    <img src="images/palace_layout_2d.png" alt="故宫2D平面布局图" 
+                         class="layout-image click-to-zoom" 
+                         onclick="openFullscreen('images/palace_layout_2d.png', '故宫建筑平面布局图')">
+                    <div class="click-hint">🖱️ 点击查看大图</div>
+                </div>
+                <div class="layout-info">
+                    <span class="layout-tag">平面图</span>
+                    <span class="layout-tag">专业图纸</span>
+                    <h3>故宫建筑平面布局图</h3>
+                    <p>中轴线对称结构，从午门到神武门，完整呈现前朝后寝布局。</p>
+                    <p><strong>主要建筑：</strong>午门、太和门、太和殿、中和殿、保和殿、乾清门、乾清宫、交泰殿、坤宁宫、神武门</p>
+                </div>
+            </div>
+            
+            <!-- 3D俯瞰图1卡片 -->
+            <div class="layout-card">
+                <div class="layout-image-container" style="position: relative;">
+                    <img src="images/palace_layout_3d_1.png" alt="故宫俯瞰图" 
+                         class="layout-image click-to-zoom"
+                         onclick="openFullscreen('images/palace_layout_3d_1.png', '故宫俯瞰布局图')">
+                    <div class="click-hint">🖱️ 点击查看大图</div>
+                </div>
+                <div class="layout-info">
+                    <span class="layout-tag">俯瞰图</span>
+                    <span class="layout-tag">整体布局</span>
+                    <h3>故宫俯瞰布局图</h3>
+                    <p>展示故宫宏大规模和严谨布局，黄色琉璃瓦屋顶，红色宫墙环绕。</p>
+                    <p><strong>特色区域：</strong>慈宁宫、寿康宫、文华殿、武英殿、东华门、西华门</p>
+                </div>
+            </div>
+            
+            <!-- 3D俯瞰图2卡片 -->
+            <div class="layout-card">
+                <div class="layout-image-container" style="position: relative;">
+                    <img src="images/palace_layout_3d_2.png" alt="故宫功能分区图" 
+                         class="layout-image click-to-zoom"
+                         onclick="openFullscreen('images/palace_layout_3d_2.png', '故宫功能分区图')">
+                    <div class="click-hint">🖱️ 点击查看大图</div>
+                </div>
+                <div class="layout-info">
+                    <span class="layout-tag">功能分区</span>
+                    <span class="layout-tag">现代视角</span>
+                    <h3>故宫功能分区图</h3>
+                    <p>用现代功能分区理念重新解读故宫，趣味性展示各区域功能。</p>
+                    <p><strong>功能区：</strong>国家客厅、太后妃养老院、后花园、娱乐区、书房、餐饮区等</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 原有发展历程 -->
+    <section class="timeline">
+        <h2>📜 宫殿建筑发展历程</h2>
+        <div class="timeline-item">
+            <h3>先秦时期（前21世纪-前221年）</h3>
+            <p>出现最早的宫殿建筑，如二里头遗址、殷墟宫殿遗址，奠定了中国宫殿建筑的基本格局。</p>
+        </div>
+        <div class="timeline-item">
+            <h3>秦汉时期（前221年-220年）</h3>
+            <p>建造了规模宏大的阿房宫、未央宫等，形成"前朝后寝"的宫殿布局模式。</p>
+        </div>
+        <div class="timeline-item">
+            <h3>隋唐时期（581年-907年）</h3>
+            <p>大明宫含元殿等建筑规模空前，建筑技术达到新的高度，影响东亚各国。</p>
+        </div>
+        <div class="timeline-item">
+            <h3>宋元明清时期（960年-1912年）</h3>
+            <p>宫殿建筑制度日趋完善，明清故宫成为中国古代宫殿建筑的集大成者。</p>
+        </div>
+    </section>
+
+    <!-- 原有文化象征 -->
+    <section>
+        <h2>🎨 建筑文化与象征意义</h2>
+        <div class="cultural-aspects">
+            <div class="aspect">
+                <h4>五行色彩象征</h4>
+                <p>黄色象征土德，代表中央皇权；红色象征火德，寓意吉祥兴旺。</p>
+            </div>
+            <div class="aspect">
+                <h4>数字象征</h4>
+                <p>使用九、五等数字（九五之尊），体现帝王至高无上的地位。</p>
+            </div>
+            <div class="aspect">
+                <h4>动物装饰</h4>
+                <p>龙、凤等神兽装饰，象征皇权的神圣性和权威性。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 故宫建筑数据 -->
+    <section>
+        <h2>📊 故宫建筑数据</h2>
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h3>72万 m²</h3>
+                <p>占地面积</p>
+            </div>
+            <div class="stat-item">
+                <h3>980座</h3>
+                <p>建筑数量</p>
+            </div>
+            <div class="stat-item">
+                <h3>8707间</h3>
+                <p>房间总数</p>
+            </div>
+            <div class="stat-item">
+                <h3>14年</h3>
+                <p>建造时间</p>
+            </div>
+            <div class="stat-item">
+                <h3>24位</h3>
+                <p>明清皇帝</p>
+            </div>
+            <div class="stat-item">
+                <h3>1987年</h3>
+                <p>入选世界遗产</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 互动探索区 -->
+    <section>
+        <h2>🔍 互动探索故宫</h2>
+        <div class="interactive-section">
+            <div class="interactive-card">
+                <div style="font-size: 40px; margin-bottom: 20px;">🏛️</div>
+                <h3>虚拟游览故宫</h3>
+                <p>通过故宫博物院官方虚拟游览平台，身临其境探索故宫每一个角落。</p>
+                <a href="https://pano.dpm.org.cn/#/" target="_blank" class="cta-button">开始虚拟游览</a>
+            </div>
+            
+            <div class="interactive-card">
+                <div style="font-size: 40px; margin-bottom: 20px;">🔨</div>
+                <h3>观看建造过程</h3>
+                <p>通过三维动画了解中国传统古建筑的完整建造过程。</p>
+                <a href="https://www.bilibili.com/video/BV1R54y167k9/" target="_blank" class="cta-button">观看建造动画</a>
+            </div>
+            
+            <div class="interactive-card">
+                <div style="font-size: 40px; margin-bottom: 20px;">🎨</div>
+                <h3>探索"八大作"工艺</h3>
+                <p>了解故宫背后非遗"八大作"手绘动画，感受传统建筑工艺。</p>
+                <a href="http://xhslink.com/o/65PgLtiYrWS" target="_blank" class="cta-button">查看非遗工艺</a>
+            </div>
+        </div>
+    </section>
+
+   <!-- 视频展示区（修改后） -->
+    <section class="video-gallery">
+        <h2>🎬 故宫建造工艺视频展示</h2>
+        
+        <!-- 小红书"八大作"视频 -->
+        <div class="video-card">
+            <div class="video-header">
+                <h3>故宫非遗"八大作"手绘动画</h3>
+                <p>数艺赋能：故宫背后非遗工艺的现代呈现</p>
+            </div>
+            
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <!-- 这里替换为您下载的视频文件 -->
+                    <video controls poster="images/video_poster.jpg">
+                        <source src="videos/palace_8skills.mp4" type="video/mp4">
+                        <source src="videos/palace_8skills.webm" type="video/webm">
+                        <source src="videos/palace_8skills.ogv" type="video/ogg">
+                        您的浏览器不支持视频播放，请升级浏览器或
+                        <a href="videos/palace_8skills.mp4" download>下载视频文件</a>
+                    </video>
+                </div>
+                
+                <div class="video-desc">
+                    <p>故宫建筑凝聚了中国古代建筑工艺的最高成就，木作、瓦作、石作、彩画作等"八大作"各具特色。</p>
+                    <p>本视频通过手绘动画形式，生动展示了故宫建筑的精细工艺和传统技艺。</p>
+                    <span class="video-source">视频来源：小红书 | 视频时长：小于1分钟</span>
+                </div>
+            </div>
+        </div>
+        
+
+    <!-- 原有互动按钮 -->
+    <section class="interactive">
+        <h2>🔍 更多互动探索</h2>
+        <div style="text-align: center; margin: 30px 0;">
+            <button onclick="showPalaceLayout()" style="margin: 10px; padding: 12px 24px; background: #d4af37; color: white; border: none; border-radius: 6px; cursor: pointer;">
+                查看宫殿布局图
+            </button>
+            <button onclick="showConstructionProcess()" style="margin: 10px; padding: 12px 24px; background: #d4af37; color: white; border: none; border-radius: 6px; cursor: pointer;">
+                观看建造过程动画
+            </button>
+            <button onclick="takeVirtualTour()" style="margin: 10px; padding: 12px 24px; background: #d4af37; color: white; border: none; border-radius: 6px; cursor: pointer;">
+                开始虚拟游览
+            </button>
+        </div>
+    </section>
+</main>
+
+
+<!-- 音频播放器（放在所有页面的footer之前） -->
+<div id="music-player" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000; background: rgba(0,0,0,0.8); color: white; padding: 10px; border-radius: 10px; display: none;">
+    <audio id="bgm" loop preload="auto" style="display: none;">
+        <source src="music/background_music.mp3" type="audio/mpeg">
+        您的浏览器不支持音频播放
+    </audio>
+    
+    <div style="display: flex; align-items: center; gap: 10px;">
+        <button id="playPauseBtn" style="background: #8B4513; color: white; border: none; width: 30px; height: 30px; border-radius: 50%; cursor: pointer;">
+            ▶
+        </button>
+        <span id="music-title" style="font-size: 12px;">古风合辑</span>
+        <button id="volumeToggleBtn" style="background: none; border: none; color: white; cursor: pointer; font-size: 16px;">
+            🔈
+        </button>
+        <div id="volumeControl" style="display: none;">
+            <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="0.3" style="width: 60px;">
+        </div>
+    </div>
+</div>
+
+<!-- 音乐控制按钮（固定在页面右下角） -->
+<button id="music-toggle" style="
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #8B4513;
+    color: white;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;">
+    🎵
+</button>
+
+<footer>
+    <div class="footer-content">
+        <p>© 2026 中国古代建筑成就 | 探索中华五千年建筑智慧</p>
+        <p>视频说明：故宫非遗"八大作"手绘动画 | 三维建造过程动画</p>
+    </div>
+</footer>
+
+
+<-- 放大查看模态框 -->
+<div id="fullscreenModal" class="fullscreen-modal">
+    <div class="fullscreen-controls">
+        <button class="fullscreen-close" onclick="closeFullscreen()">×</button>
+    </div>
+    
+    <div class="fullscreen-image-container">
+        <img id="fullscreenImg" class="fullscreen-image" src="" alt="">
+    </div>
+    
+    <h2 id="fullscreenTitle" class="fullscreen-title"></h2>
+    
+    <div class="zoom-buttons">
+        <button class="zoom-btn" onclick="zoomIn()">🔍 放大</button>
+        <button class="zoom-btn" onclick="zoomOut()">🔍 缩小</button>
+        <button class="zoom-btn" onclick="resetZoom()">↺ 重置</button>
+        <button class="zoom-btn" onclick="downloadImage()">⬇️ 下载图片</button>
+    </div>
+    
+    <div class="hint-text">
+        使用鼠标滚轮缩放 | 双击图片重置大小 | 按ESC键退出
+    </div>
+</div>
+
+<script>
+    // 当前缩放状态
+    let currentScale = 1;
+    const zoomStep = 0.2;
+    const maxScale = 4;  // 最大可以放大4倍
+    const minScale = 0.5; // 最小可以缩小一半
+    let currentImage = '';
+    
+    // 打开全屏查看
+    function openFullscreen(imgSrc, title) {
+        const modal = document.getElementById('fullscreenModal');
+        const fullscreenImg = document.getElementById('fullscreenImg');
+        const titleElement = document.getElementById('fullscreenTitle');
+        
+        // 设置图片和标题
+        fullscreenImg.src = imgSrc;
+        titleElement.textContent = title;
+        currentImage = imgSrc;
+        
+        // 重置缩放
+        resetZoom();
+        
+        // 显示模态框
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        
+        // 记录打开时间（用于统计）
+        console.log('打开图片查看：' + title);
+    }
+    
+    // 关闭全屏查看
+    function closeFullscreen() {
+        const modal = document.getElementById('fullscreenModal');
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    
+    // 放大
+    function zoomIn() {
+        if (currentScale < maxScale) {
+            currentScale += zoomStep;
+            updateFullscreenZoom();
+        }
+    }
+    
+    // 缩小
+    function zoomOut() {
+        if (currentScale > minScale) {
+            currentScale -= zoomStep;
+            updateFullscreenZoom();
+        }
+    }
+    
+    // 重置缩放
+    function resetZoom() {
+        currentScale = 1;
+        updateFullscreenZoom();
+    }
+    
+    // 更新全屏图片缩放
+    function updateFullscreenZoom() {
+        const fullscreenImg = document.getElementById('fullscreenImg');
+        fullscreenImg.style.transform = `scale(${currentScale})`;
+        fullscreenImg.style.transformOrigin = 'center center';
+        
+        // 显示当前缩放比例
+        const titleElement = document.getElementById('fullscreenTitle');
+        const originalTitle = titleElement.textContent.replace(/（\d+%）$/, '');
+        titleElement.textContent = `${originalTitle}（${Math.round(currentScale * 100)}%）`;
+    }
+    
+    // 下载图片
+    function downloadImage() {
+        if (currentImage) {
+            const link = document.createElement('a');
+            link.href = currentImage;
+            link.download = currentImage.split('/').pop();
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    }
+    
+    // 键盘快捷键
+    document.addEventListener('keydown', function(e) {
+        const modal = document.getElementById('fullscreenModal');
+        if (!modal.classList.contains('active')) return;
+        
+        switch(e.key) {
+            case 'Escape':
+                closeFullscreen();
+                break;
+            case '+':
+            case '=':
+                e.preventDefault();
+                zoomIn();
+                break;
+            case '-':
+            case '_':
+                e.preventDefault();
+                zoomOut();
+                break;
+            case '0':
+                resetZoom();
+                break;
+        }
+    });
+    
+    // 鼠标滚轮缩放
+    document.getElementById('fullscreenModal').addEventListener('wheel', function(e) {
+        e.preventDefault();
+        
+        if (e.deltaY < 0) {
+            // 滚轮向上，放大
+            zoomIn();
+        } else {
+            // 滚轮向下，缩小
+            zoomOut();
+        }
+    });
+    
+    // 双击重置大小
+    document.getElementById('fullscreenImg').addEventListener('dblclick', function(e) {
+        e.preventDefault();
+        resetZoom();
+    });
+    
+    // 移动端触摸缩放
+    let touchStartDistance = 0;
+    
+    document.getElementById('fullscreenImg').addEventListener('touchstart', function(e) {
+        if (e.touches.length === 2) {
+            touchStartDistance = Math.hypot(
+                e.touches[0].clientX - e.touches[1].clientX,
+                e.touches[0].clientY - e.touches[1].clientY
+            );
+        }
+    });
+    
+    document.getElementById('fullscreenImg').addEventListener('touchmove', function(e) {
+        if (e.touches.length === 2) {
+            e.preventDefault();
+            const touchDistance = Math.hypot(
+                e.touches[0].clientX - e.touches[1].clientX,
+                e.touches[0].clientY - e.touches[1].clientY
+            );
+            
+            if (touchStartDistance) {
+                const scaleChange = touchDistance / touchStartDistance;
+                const newScale = Math.max(minScale, Math.min(maxScale, currentScale * scaleChange));
+                
+                if (newScale !== currentScale) {
+                    currentScale = newScale;
+                    updateFullscreenZoom();
+                }
+            }
+        }
+    });
+    
+    // 点击背景关闭
+    document.getElementById('fullscreenModal').addEventListener('click', function(e) {
+        if (e.target === this) {
+            closeFullscreen();
+        }
+    });
+
+    function showPalaceLayout() {
+        // 实际应用中这里会打开故宫平面布局图
+        window.open('images/palace_layout_2d.png', '_blank');
+    }
+    
+    function showConstructionProcess() {
+        // 实际应用中这里会播放建造动画
+        window.open('https://www.bilibili.com/video/BV1R54y167k9/', '_blank');
+    }
+    
+    function takeVirtualTour() {
+        // 实际应用中这里会启动虚拟游览
+        window.open('https://pano.dpm.org.cn/#/', '_blank');
+    }
+
+    // 视频播放优化
+    document.addEventListener('DOMContentLoaded', function() {
+        const video = document.querySelector('video');
+        
+        if(video) {
+            // 添加视频加载提示
+            video.addEventListener('waiting', function() {
+                console.log('视频正在加载，请稍候...');
+            });
+            
+            // 视频播放完成提示
+            video.addEventListener('ended', function() {
+                console.log('视频播放完成');
+            });
+            
+            // 如果视频加载失败，显示备用链接
+            video.addEventListener('error', function() {
+                const videoWrapper = document.querySelector('.video-wrapper');
+                if(videoWrapper) {
+                    videoWrapper.innerHTML = `
+                        <div style="padding: 40px; text-align: center; background: #f8f9fa; border-radius: 8px;">
+                            <p style="font-size: 18px; margin-bottom: 20px;">视频加载失败</p>
+                            <p>请检查视频文件路径，或通过以下链接观看：</p>
+                            <a href="http://xhslink.com/o/65PgLtiYrWS" 
+                               target="_blank" 
+                               style="display: inline-block; background: #ff2442; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; margin-top: 15px;">
+                                点击观看原视频
+                            </a>
+                        </div>
+                    `;
+                }
+            });
+        }
+    });
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // 音乐控制元素
+    const audio = document.getElementById('bgm');
+    const musicPlayer = document.getElementById('music-player');
+    const musicToggle = document.getElementById('music-toggle');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const volumeToggleBtn = document.getElementById('volumeToggleBtn');
+    const volumeControl = document.getElementById('volumeControl');
+    const volumeSlider = document.getElementById('volumeSlider');
+    const musicTitle = document.getElementById('music-title');
+
+    // 从LocalStorage恢复播放状态
+    const isPlaying = localStorage.getItem('bgmPlaying') === 'true';
+    const currentTime = parseFloat(localStorage.getItem('bgmTime') || 0);
+    const volume = parseFloat(localStorage.getItem('bgmVolume') || 0.3);
+    const isMuted = localStorage.getItem('bgmMuted') === 'true';
+    
+    // 初始化设置
+    audio.volume = volume;
+    audio.muted = isMuted;
+    volumeSlider.value = volume;
+    
+    // 恢复播放位置
+    if (currentTime > 0) {
+        audio.currentTime = currentTime;
+    }
+    
+    // 恢复播放状态
+    if (isPlaying) {
+        audio.play().catch(e => console.log('自动播放被阻止:', e));
+        playPauseBtn.textContent = '⏸';
+    }
+    
+    // 更新UI
+    updateVolumeIcon();
+
+    // 播放/暂停控制
+    playPauseBtn.addEventListener('click', function() {
+        if (audio.paused) {
+            audio.play();
+            playPauseBtn.textContent = '⏸';
+            localStorage.setItem('bgmPlaying', 'true');
+        } else {
+            audio.pause();
+            playPauseBtn.textContent = '▶';
+            localStorage.setItem('bgmPlaying', 'false');
+        }
+    });
+    
+    // 显示/隐藏音乐播放器
+    musicToggle.addEventListener('click', function() {
+        if (musicPlayer.style.display === 'none') {
+            musicPlayer.style.display = 'block';
+            musicToggle.style.display = 'none';
+        } else {
+            musicPlayer.style.display = 'none';
+        }
+    });
+    
+    // 显示/隐藏音量控制
+    volumeToggleBtn.addEventListener('click', function() {
+        volumeControl.style.display = volumeControl.style.display === 'none' ? 'block' : 'none';
+    });
+    
+    // 音量控制
+    volumeSlider.addEventListener('input', function() {
+        audio.volume = this.value;
+        localStorage.setItem('bgmVolume', this.value);
+        audio.muted = false;
+        updateVolumeIcon();
+    });
+    
+    // 静音切换
+    volumeToggleBtn.addEventListener('click', function(e) {
+        if (e.target !== volumeToggleBtn) return; // 防止与音量控制冲突
+        
+        audio.muted = !audio.muted;
+        localStorage.setItem('bgmMuted', audio.muted);
+        updateVolumeIcon();
+    });
+    
+    // 保存播放时间
+    audio.addEventListener('timeupdate', function() {
+        if (!audio.paused) {
+            localStorage.setItem('bgmTime', audio.currentTime);
+        }
+    });
+    
+    // 页面关闭前保存状态
+    window.addEventListener('beforeunload', function() {
+        localStorage.setItem('bgmTime', audio.currentTime);
+        localStorage.setItem('bgmPlaying', !audio.paused);
+    });
+    
+    // 更新音量图标
+    function updateVolumeIcon() {
+        if (audio.muted || audio.volume === 0) {
+            volumeToggleBtn.innerHTML = '🔇';
+        } else if (audio.volume < 0.5) {
+            volumeToggleBtn.innerHTML = '🔈';
+        } else {
+            volumeToggleBtn.innerHTML = '🔊';
+        }
+    }
+    
+    // 自动播放处理
+    function tryAutoPlay() {
+        if (isPlaying) {
+            audio.play().then(() => {
+                console.log('背景音乐已自动播放');
+            }).catch(e => {
+                console.log('自动播放被阻止，需要用户交互');
+                // 显示提示
+                musicTitle.innerHTML = '点击播放按钮播放音乐';
+            });
+        }
+    }
+    
+    // 用户首次交互后尝试播放
+    document.addEventListener('click', function firstInteraction() {
+        if (audio.paused && isPlaying) {
+            audio.play();
+            playPauseBtn.textContent = '⏸';
+        }
+        document.removeEventListener('click', firstInteraction);
+    }, { once: true });
+    
+    // 尝试自动播放
+    tryAutoPlay();
+});
+</script>
+</body>
+</html>

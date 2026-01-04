@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>防御建筑 - 中国古代建筑成就</title>
+    <style>
+        /* 通用样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", "SimHei", sans-serif;
+        }
+        
+        body {
+            background-color: #f5f2e9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(to right, #696969, #8B6969);
+            color: #fff;
+            padding: 1.5rem 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+        
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+        
+        nav a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        
+        section {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            color: #8B6969;
+            border-bottom: 2px solid #8B6969;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        h3 {
+            font-size: 1.6rem;
+            color: #8B6969;
+            margin: 1.5rem 0 1rem;
+        }
+        
+        h4 {
+            font-size: 1.3rem;
+            color: #696969;
+            margin: 1rem 0 0.5rem;
+        }
+        
+.defense-carousel-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 2.5rem auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    border: 1px solid rgba(139, 69, 19, 0.2);
+}
+
+.defense-carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 500px;
+}
+
+.defense-slide {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.defense-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background-color: #f5f2e9;
+}
+
+.defense-slide-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, 
+        rgba(0, 0, 0, 0.4) 0%,
+        rgba(0, 0, 0, 0.3) 30%,
+        rgba(0, 0, 0, 0.1) 60%,
+        transparent 70%);
+    color: white;
+    padding: 2rem 1.5rem 1.5rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.7);
+    backdrop-filter: blur(1px);
+}
+
+.defense-slide-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: #fff;
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+    letter-spacing: 0.5px;
+    font-family: "Microsoft YaHei", "SimHei", serif;
+}
+
+.defense-slide-desc {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.95);
+    opacity: 0.95;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+    margin-bottom: 0.5rem;
+}
+
+.defense-controls {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+    z-index: 10;
+}
+
+.defense-btn {
+    background: rgba(255,255,255,0.2);
+    border: none;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+.defense-btn:hover {
+    background: rgba(255,255,255,0.3);
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.defense-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    z-index: 10;
+}
+
+.defense-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.5);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.defense-dot.active {
+    background: white;
+    transform: scale(1.2);
+    box-shadow: 0 0 8px rgba(255,255,255,0.5);
+}
+
+.defense-counter {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    z-index: 10;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+        .main-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 1.5rem;
+        }
+        
+        .intro-card, .content-detail {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .architecture-group, .technique-card, .material-card, .process-card {
+            background: #f9f5f0;
+            padding: 1rem;
+            border-left: 4px solid #d2b48c;
+            margin: 1rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #d2b48c;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2rem;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #8b4513;
+        }
+        
+        .image-gallery {
+            text-align: center;
+            margin: 1.5rem 0;
+        }
+        
+        .image-gallery img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .image-caption {
+            font-style: italic;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+        
+        ul {
+            padding-left: 2rem;
+            margin: 1rem 0;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        footer {
+            background: #696969;
+            color: #fff;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 2rem;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+            
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav a {
+                margin: 0.3rem 0;
+                width: 80%;
+                text-align: center;
+            }
+            
+            .main-image {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>防御建筑</h1>
+    <nav>
+        <a href="index.html">首页</a>
+        <a href="religion.html">宗教建筑</a>
+        <a href="palace.html">宫殿建筑</a>
+        <a href="garden.html">园林建筑</a>
+        <a href="defense.html">防御建筑</a>
+        <a href="technique.html">材料与技术</a>
+        <a href="people.html">著名人物</a>
+        <a href="contact.html">参考与联系</a>
+    </nav>
+</header>
+
+<section>
+    <h2>中国古代防御建筑体系</h2>
+    
+
+<div class="defense-carousel-container">
+    <div class="defense-carousel" id="defenseCarousel">
+        <!-- 图片1 - 长城全景 -->
+        <div class="defense-slide">
+            <img src="images/defense_slide_1.jpg" alt="长城蜿蜒于群山之间的壮丽全景" class="defense-image">
+            <div class="defense-slide-info">
+                <h3 class="defense-slide-title">万里长城雄姿</h3>
+                <p class="defense-slide-desc">长城蜿蜒在起伏的山脊上，灰褐色砖石在云雾缭绕的群山间延伸，展现中国古代军事防御工程的壮丽雄姿。敌楼星罗棋布，见证了两千多年的历史沧桑。</p>
+            </div>
+        </div>
+        
+        <!-- 图片2 - 敌楼结构解析 -->
+        <div class="defense-slide">
+            <img src="images/defense_slide_2.jpg" alt="敌楼结构示意图与实际建筑对比" class="defense-image">
+            <div class="defense-slide-info">
+                <h3 class="defense-slide-title">敌楼结构全解析</h3>
+                <p class="defense-slide-desc">上图展示敌楼三维线描结构，详细标注楼橹、垛口、箭窗、马道、炮台等20余个关键部件。下图对应真实敌楼建筑，体现古代军事防御设计的科学性和实用性。</p>
+            </div>
+        </div>
+        
+        <!-- 图片3 - 防御体系示意图 -->
+        <div class="defense-slide">
+            <img src="images/defense_slide_3.jpg" alt="明代山西两镇防御体系示意图" class="defense-image">
+            <div class="defense-slide-info">
+                <h3 class="defense-slide-title">明代边防体系布局</h3>
+                <p class="defense-slide-desc">明代山西大同镇与山西镇防御体系示意图，展示长城沿线关隘、城池、堡垒的立体防御网络。外三关（偏关、宁武关、雁门关）构成核心防线，配以屯兵、传烽、驿传、军需四大系统。</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="defense-counter">
+        <span id="defenseCurrentSlide">1</span> / <span id="defenseTotalSlides">3</span>
+    </div>
+    
+    <div class="defense-controls">
+        <button class="defense-btn" id="defensePrevBtn">‹</button>
+        <button class="defense-btn" id="defenseNextBtn">›</button>
+    </div>
+    
+    <div class="defense-dots">
+        <button class="defense-dot active" data-index="0"></button>
+        <button class="defense-dot" data-index="1"></button>
+        <button class="defense-dot" data-index="2"></button>
+    </div>
+</div>
+
+<div style="text-align: center; margin: 1rem 0; color: #666; font-size: 0.9rem;">
+    <p>左右箭头切换 | 点击圆点跳转 | 长城防御建筑技术与体系</p>
+</div>
+    
+        
+    <div class="intro-card">
+        <p>中国古代防御建筑以长城为代表，形成了完整的军事防御体系。从春秋战国时期开始，各诸侯国为防御外敌入侵，纷纷修筑长城。秦始皇统一六国后，将各国长城连接起来，形成了万里长城的雏形。此后历代王朝不断修缮和扩建，形成了今天我们所见的规模。</p>
+        <p>长城不仅是一道军事防线，更是中国古代军事思想、工程技术、组织管理的集中体现。它因地制宜，充分利用山川地势，构建了包括城墙、敌台、关隘、烽燧等在内的完整防御体系。长城沿线还设有屯兵城、军堡等配套设施，形成了严密的边境防御网络。</p>
+    </div>
+
+    <div class="content-detail">
+        <h3>长城各段特色</h3>
+        
+        <div class="architecture-group">
+            <h4>八达岭长城</h4>
+            <p>位于北京延庆区，是明长城中保存最完整、最具代表性的一段。八达岭长城地势险要，城墙高大坚固，敌楼密集，是明代长城的精华所在。这里也是最早向游客开放的长城景区，被誉为"万里长城第一雄关"。八达岭段城墙平均高7.8米，墙基宽6.5米，顶部宽5.8米，可容五马并骑。城墙两侧设有垛口、射孔等防御设施，体现了明代军事防御工程的高度成就。</p>
+        </div>
+        
+        <div class="architecture-group">
+            <h4>慕田峪长城</h4>
+            <p>位于北京怀柔区，以险峻著称。慕田峪长城多建在陡峭的山脊上，敌楼密集，墙体保存完好。这里植被茂密，四季景色各异，是摄影爱好者的天堂。慕田峪长城的独特之处在于其双面垛口的设计，既可以对内外两侧进行防御，又体现了建造者的高超智慧。这段长城共有敌台22座，其中正关台三座敌楼并矗，十分罕见。</p>
+        </div>
+        
+        <div class="architecture-group">
+            <h4>司马台长城</h4>
+            <p>位于北京密云区，以"险、密、奇、巧、全"著称。司马台长城保留了大量明代原貌，敌楼形式多样，有单眼楼、双眼楼、三眼楼等，被誉为"中国长城之最"。司马台长城最险要处称为"天梯"，倾斜度达85度，几近垂直。仙女楼和望京楼是司马台长城的精华，尤其是望京楼，海拔986米，是北京段长城的制高点。</p>
+        </div>
+        
+        <div class="architecture-group">
+            <h4>山海关</h4>
+            <p>位于河北秦皇岛，是明长城的东端起点，有"天下第一关"之称。山海关北依燕山，南临渤海，地势险要，是连接东北与华北的咽喉要道，历来为兵家必争之地。关城周长约4公里，设有四座城门和多座敌楼、角楼。关城与长城相连，形成完整的防御体系。"天下第一关"匾额为明代著名书法家萧显所书，笔力苍劲，是山海关的标志。</p>
+        </div>
+    </div>
+
+    <div class="content-detail">
+        <h3>建造历史时间线</h3>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h4>春秋战国时期（前770-前221年）</h4>
+                <p>各诸侯国为防御外敌，开始修筑长城，如齐长城、楚长城、燕长城等。这一时期的诸侯国长城多采用版筑夯土技术，利用当地材料，依山势而建。齐长城西起黄河，东至黄海，全长千余里，是中国历史上最早的长城之一。</p>
+            </div>
+            <div class="timeline-item">
+                <h4>秦朝（前221-前206年）</h4>
+                <p>秦始皇统一六国后，派大将蒙恬北击匈奴，并将各国长城连接起来，形成万里长城。秦长城西起临洮（今甘肃岷县），东至辽东，绵延万余里，奠定了后世长城的基本格局。修建过程中动用了数十万军民，是中国古代最大的军事工程之一。</p>
+            </div>
+            <div class="timeline-item">
+                <h4>汉朝（前202-220年）</h4>
+                <p>汉武帝时期，为防御匈奴，大规模修筑长城，并向西延伸至河西走廊。汉长城不仅是一道军事防线，还保护了丝绸之路的畅通。汉代在长城沿线设立郡县，屯田实边，形成了完整的边防体系。汉长城最西端延伸至新疆地区，总长度超过2万里。</p>
+            </div>
+            <div class="timeline-item">
+                <h4>明朝（1368-1644年）</h4>
+                <p>明成祖朱棣迁都北京后，为防御蒙古残余势力，大规模修筑长城，形成了今天所见的长城规模。明长城东起鸭绿江，西至嘉峪关，全长8851.8公里，是历史上规模最大、工程质量最高的长城。明代采用砖石包砌技术，大大提高了长城的坚固程度。</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-detail">
+        <h3>防御体系示意图</h3>
+        <div class="image-gallery">
+            <img src="images/defense_slide_3.jpg" alt="防御体系示意图">
+            <p class="image-caption">长城防御体系包括城墙、敌楼、烽火台、关隘等，形成完整的军事防御网络。</p>
+        </div>
+        
+        <h4>主要防御设施</h4>
+        <ul>
+            <li><strong>城墙</strong>：主体防御工事，高7-8米，顶宽5-6米，可容五马并骑。墙体采用夯土或砖石结构，外侧较陡，内侧较缓，便于防守。</li>
+            <li><strong>敌楼</strong>：用于驻兵、存放武器和观察敌情，多建在制高点。敌楼分上下两层，下层驻兵储物，上层瞭望射击。</li>
+            <li><strong>烽火台</strong>：用于传递军情，白天燃烟，夜间点火。明代烽火台配备旗杆、灯笼等信号设备，可快速传递军情。</li>
+            <li><strong>关隘</strong>：重要通道的防御据点，如山海关、居庸关等。关隘设有瓮城、箭楼等设施，形成多重防御体系。</li>
+            <li><strong>垛口</strong>：城墙顶部的防御设施，用于射箭和观察。垛口高约1.7米，宽约0.5米，间距适中，既便于射击又利于隐蔽。</li>
+            <li><strong>马道</strong>：城墙内侧的斜坡通道，便于兵马快速上下城墙。马道坡度适中，路面铺设防滑砖石。</li>
+            <li><strong>水关</strong>：跨越河流的防御设施，设有水门和闸门，既可通航又可防御。</li>
+        </ul>
+    </div>
+</section>
+
+<!-- 音频播放器（放在所有页面的footer之前） -->
+<div id="music-player" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000; background: rgba(0,0,0,0.8); color: white; padding: 10px; border-radius: 10px; display: none;">
+    <audio id="bgm" loop preload="auto" style="display: none;">
+        <source src="music/background_music.mp3" type="audio/mpeg">
+        您的浏览器不支持音频播放
+    </audio>
+    
+    <div style="display: flex; align-items: center; gap: 10px;">
+        <button id="playPauseBtn" style="background: #8B4513; color: white; border: none; width: 30px; height: 30px; border-radius: 50%; cursor: pointer;">
+            ▶
+        </button>
+        <span id="music-title" style="font-size: 12px;">古风合辑</span>
+        <button id="volumeToggleBtn" style="background: none; border: none; color: white; cursor: pointer; font-size: 16px;">
+            🔈
+        </button>
+        <div id="volumeControl" style="display: none;">
+            <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="0.3" style="width: 60px;">
+        </div>
+    </div>
+</div>
+
+<!-- 音乐控制按钮（固定在页面右下角） -->
+<button id="music-toggle" style="
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #8B4513;
+    color: white;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;">
+    🎵
+</button>
+
+<footer>© 2026 中国古代建筑成就</footer>
+<script>
+// 修复版防御轮播图JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('页面已加载，开始初始化轮播图...');
+    
+    const defenseCarousel = document.getElementById('defenseCarousel');
+    const defenseSlides = document.querySelectorAll('.defense-slide');
+    const defenseDots = document.querySelectorAll('.defense-dot');
+    const defensePrevBtn = document.getElementById('defensePrevBtn');
+    const defenseNextBtn = document.getElementById('defenseNextBtn');
+    const defenseCurrentSlideSpan = document.getElementById('defenseCurrentSlide');
+    const defenseTotalSlidesSpan = document.getElementById('defenseTotalSlides');
+    
+    // 检查元素是否存在
+    console.log('找到元素：', {
+        carousel: defenseCarousel,
+        slides: defenseSlides.length,
+        dots: defenseDots.length,
+        prevBtn: defensePrevBtn,
+        nextBtn: defenseNextBtn
+    });
+    
+    if (!defenseCarousel || !defensePrevBtn || !defenseNextBtn) {
+        console.error('轮播图元素未找到！');
+        return;
+    }
+    
+    let defenseCurrentIndex = 0;
+    const defenseTotalSlides = defenseSlides.length;
+    
+    if (defenseTotalSlidesSpan) {
+        defenseTotalSlidesSpan.textContent = defenseTotalSlides;
+    }
+    
+    // 更新轮播图位置
+    function updateDefenseCarousel() {
+        defenseCarousel.style.transform = `translateX(-${defenseCurrentIndex * 100}%)`;
+        if (defenseCurrentSlideSpan) {
+            defenseCurrentSlideSpan.textContent = defenseCurrentIndex + 1;
+        }
+        
+        // 更新圆点状态
+        defenseDots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === defenseCurrentIndex);
+        });
+    }
+    
+    // 下一张
+    function defenseNextSlide() {
+        defenseCurrentIndex = (defenseCurrentIndex + 1) % defenseTotalSlides;
+        updateDefenseCarousel();
+    }
+    
+    // 上一张
+    function defensePrevSlide() {
+        defenseCurrentIndex = (defenseCurrentIndex - 1 + defenseTotalSlides) % defenseTotalSlides;
+        updateDefenseCarousel();
+    }
+    
+    // 事件监听 - 修复版
+    defensePrevBtn.addEventListener('click', defensePrevSlide);
+    defenseNextBtn.addEventListener('click', defenseNextSlide);
+    
+    // 测试事件监听
+    defensePrevBtn.addEventListener('click', () => console.log('上一张按钮被点击'));
+    defenseNextBtn.addEventListener('click', () => console.log('下一张按钮被点击'));
+    
+    // 圆点点击
+    defenseDots.forEach((dot, index) => {
+        dot.addEventListener('click', (e) => {
+            console.log('圆点点击，索引：', index);
+            e.preventDefault();
+            defenseCurrentIndex = index;
+            updateDefenseCarousel();
+        });
+    });
+    
+    // 键盘控制
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+            defensePrevSlide();
+        }
+        if (e.key === 'ArrowRight') {
+            defenseNextSlide();
+        }
+    });
+    
+    // 自动轮播
+    let defenseAutoPlay = setInterval(defenseNextSlide, 6000);
+    
+    // 鼠标悬停时暂停自动轮播
+    const defenseContainer = document.querySelector('.defense-carousel-container');
+    if (defenseContainer) {
+        defenseContainer.addEventListener('mouseenter', () => {
+            clearInterval(defenseAutoPlay);
+        });
+        
+        defenseContainer.addEventListener('mouseleave', () => {
+            defenseAutoPlay = setInterval(defenseNextSlide, 6000);
+        });
+    }
+    
+    console.log('轮播图初始化完成！');
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // 音乐控制元素
+    const audio = document.getElementById('bgm');
+    const musicPlayer = document.getElementById('music-player');
+    const musicToggle = document.getElementById('music-toggle');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const volumeToggleBtn = document.getElementById('volumeToggleBtn');
+    const volumeControl = document.getElementById('volumeControl');
+    const volumeSlider = document.getElementById('volumeSlider');
+    const musicTitle = document.getElementById('music-title');
+
+    // 从LocalStorage恢复播放状态
+    const isPlaying = localStorage.getItem('bgmPlaying') === 'true';
+    const currentTime = parseFloat(localStorage.getItem('bgmTime') || 0);
+    const volume = parseFloat(localStorage.getItem('bgmVolume') || 0.3);
+    const isMuted = localStorage.getItem('bgmMuted') === 'true';
+    
+    // 初始化设置
+    audio.volume = volume;
+    audio.muted = isMuted;
+    volumeSlider.value = volume;
+    
+    // 恢复播放位置
+    if (currentTime > 0) {
+        audio.currentTime = currentTime;
+    }
+    
+    // 恢复播放状态
+    if (isPlaying) {
+        audio.play().catch(e => console.log('自动播放被阻止:', e));
+        playPauseBtn.textContent = '⏸';
+    }
+    
+    // 更新UI
+    updateVolumeIcon();
+
+    // 播放/暂停控制
+    playPauseBtn.addEventListener('click', function() {
+        if (audio.paused) {
+            audio.play();
+            playPauseBtn.textContent = '⏸';
+            localStorage.setItem('bgmPlaying', 'true');
+        } else {
+            audio.pause();
+            playPauseBtn.textContent = '▶';
+            localStorage.setItem('bgmPlaying', 'false');
+        }
+    });
+    
+    // 显示/隐藏音乐播放器
+    musicToggle.addEventListener('click', function() {
+        if (musicPlayer.style.display === 'none') {
+            musicPlayer.style.display = 'block';
+            musicToggle.style.display = 'none';
+        } else {
+            musicPlayer.style.display = 'none';
+        }
+    });
+    
+    // 显示/隐藏音量控制
+    volumeToggleBtn.addEventListener('click', function() {
+        volumeControl.style.display = volumeControl.style.display === 'none' ? 'block' : 'none';
+    });
+    
+    // 音量控制
+    volumeSlider.addEventListener('input', function() {
+        audio.volume = this.value;
+        localStorage.setItem('bgmVolume', this.value);
+        audio.muted = false;
+        updateVolumeIcon();
+    });
+    
+    // 静音切换
+    volumeToggleBtn.addEventListener('click', function(e) {
+        if (e.target !== volumeToggleBtn) return; // 防止与音量控制冲突
+        
+        audio.muted = !audio.muted;
+        localStorage.setItem('bgmMuted', audio.muted);
+        updateVolumeIcon();
+    });
+    
+    // 保存播放时间
+    audio.addEventListener('timeupdate', function() {
+        if (!audio.paused) {
+            localStorage.setItem('bgmTime', audio.currentTime);
+        }
+    });
+    
+    // 页面关闭前保存状态
+    window.addEventListener('beforeunload', function() {
+        localStorage.setItem('bgmTime', audio.currentTime);
+        localStorage.setItem('bgmPlaying', !audio.paused);
+    });
+    
+    // 更新音量图标
+    function updateVolumeIcon() {
+        if (audio.muted || audio.volume === 0) {
+            volumeToggleBtn.innerHTML = '🔇';
+        } else if (audio.volume < 0.5) {
+            volumeToggleBtn.innerHTML = '🔈';
+        } else {
+            volumeToggleBtn.innerHTML = '🔊';
+        }
+    }
+    
+    // 自动播放处理
+    function tryAutoPlay() {
+        if (isPlaying) {
+            audio.play().then(() => {
+                console.log('背景音乐已自动播放');
+            }).catch(e => {
+                console.log('自动播放被阻止，需要用户交互');
+                // 显示提示
+                musicTitle.innerHTML = '点击播放按钮播放音乐';
+            });
+        }
+    }
+    
+    // 用户首次交互后尝试播放
+    document.addEventListener('click', function firstInteraction() {
+        if (audio.paused && isPlaying) {
+            audio.play();
+            playPauseBtn.textContent = '⏸';
+        }
+        document.removeEventListener('click', firstInteraction);
+    }, { once: true });
+    
+    // 尝试自动播放
+    tryAutoPlay();
+});
+</script>
+</body>
+</html>

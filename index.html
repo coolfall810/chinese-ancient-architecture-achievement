@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中国古代建筑成就</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* 统一导航栏样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", "SimHei", sans-serif;
+        }
+        
+        body {
+            background-color: #f5f2e9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(to right, #8B4513, #A0522D);
+            color: #fff;
+            padding: 1.5rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        header h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        nav a:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+        
+        /* 主内容区样式 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        section {
+            margin: 2rem 0;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            color: #8B0000;
+            text-align: center;
+            margin: 2rem 0 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #d2b48c;
+        }
+        
+        h3 {
+            font-size: 1.6rem;
+            color: #A52A2A;
+            margin: 1.5rem 0 1rem;
+        }
+        
+        h4 {
+            font-size: 1.3rem;
+            color: #8B0000;
+            margin: 1rem 0 0.5rem;
+        }
+        
+        /* 介绍卡片样式 */
+        .intro-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin: 2rem 0;
+            border-left: 5px solid #8B0000;
+        }
+        
+        /* 特色网格布局 */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: transform 0.3s ease;
+            border-top: 4px solid #A52A2A;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+        }
+        
+        .feature-card h4 {
+            color: #8B0000;
+            margin-bottom: 0.8rem;
+        }
+        
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* 故宫图片展示区 */
+/* 故宫图片展示区居中样式 */
+.palace-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+    margin: 2.5rem auto; /* 修改为auto，使其水平居中 */
+    max-width: 1200px; /* 限制最大宽度 */
+    justify-content: center; /* 网格容器内居中 */
+}
+
+/* 确保每个卡片在网格单元中居中 */
+.palace-image-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 水平居中 */
+    text-align: center; /* 文字居中对齐 */
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    max-width: 400px; /* 限制卡片最大宽度 */
+    width: 100%; /* 自适应宽度 */
+    margin: 0 auto; /* 卡片自身居中 */
+}
+
+/* 图片居中显示 */
+.palace-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block; /* 确保图片居中 */
+}
+
+/* 标题和说明文字居中 */
+.palace-caption {
+    padding: 1rem;
+    text-align: center; /* 确保文字居中 */
+    width: 100%; /* 占满宽度 */
+}
+
+.palace-caption h4 {
+    color: #8B0000;
+    margin-bottom: 0.5rem;
+    text-align: center; /* 标题居中 */
+}
+
+.palace-caption p {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    text-align: center; /* 段落居中 */
+    margin: 0 auto; /* 段落居中 */
+    max-width: 90%; /* 限制段落宽度，便于阅读 */
+}
+        
+        /* 视频容器样式 */
+        .video-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        video {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .video-desc {
+            color: #666;
+            margin-top: 1rem;
+            font-style: italic;
+        }
+        
+        /* 时间线样式 */
+        .timeline {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin: 2rem 0;
+        }
+        
+        .timeline ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .timeline li {
+            padding: 1rem 0 1rem 2rem;
+            border-left: 3px solid #A52A2A;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+        
+        .timeline li:before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 1.5rem;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #8B0000;
+        }
+        
+        /* 页脚样式 */
+        footer {
+            background: #8B4513;
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            nav {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+            
+            nav a {
+                width: 80%;
+                text-align: center;
+                margin: 0.3rem 0;
+            }
+            
+            .palace-gallery {
+                grid-template-columns: 1fr;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+/* 使特色卡片变为可点击的链接 */
+.feature-grid a {
+    text-decoration: none; /* 去掉下划线 */
+    color: inherit; /* 继承文字颜色 */
+    display: block; /* 使整个卡片都可点击 */
+}
+
+.feature-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: all 0.3s ease;
+    border-top: 4px solid #A52A2A;
+    cursor: pointer; /* 显示手形光标 */
+    height: 100%; /* 确保卡片高度一致 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    border-top-color: #8B0000; /* 悬停时改变边框颜色 */
+    background: linear-gradient(to bottom, #fff8f8, #ffffff); /* 悬停时浅红色背景 */
+}
+
+/* 悬停时改变标题颜色 */
+.feature-card:hover h4 {
+    color: #8B0000;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+/* 悬停时添加图标动画 */
+.feature-card:hover h4:before {
+    transform: translateY(-3px);
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+    </style>
+</head>
+
+<body>
+<header>
+    <h1>中国古代建筑成就（1911年前）</h1>
+    <nav>
+        <a href="index.html">首页</a>
+        <a href="religion.html">宗教建筑</a>
+        <a href="palace.html">宫殿建筑</a>
+        <a href="garden.html">园林建筑</a>
+        <a href="defense.html">防御建筑</a>
+        <a href="technique.html">材料与技术</a>
+        <a href="people.html">著名人物</a>
+        <a href="contact.html">参考与联系</a>
+    </nav>
+</header>
+
+<main class="container">
+    <section>
+        <h2>欢迎来到中国古代建筑成就展示网站</h2>
+        
+        <div class="intro-card">
+            <h3>中国古建筑的历史地位</h3>
+            <p>中国古代建筑以其独特的木构架体系、精美的装饰艺术和深厚的文化内涵，在世界建筑史上独树一帜。从雄伟的宫殿到精巧的园林，从庄严的寺庙到坚固的防御工事，每一座古建筑都是中华民族智慧的结晶。</p>
+            <p>本网站系统展示1911年以前的中国古代建筑成就，涵盖宫殿、宗教、园林、防御四大建筑类型，以及建筑材料、技术和著名建筑师等内容，带您领略中华五千年建筑艺术的辉煌成就。</p>
+        </div>
+
+    <!-- 故宫图片展示区 -->
+    <div class="palace-gallery">
+        <!-- 图片1：雪景故宫 -->
+        <div class="palace-image-card">
+            <img src="images/palace_snow_1.jpg" alt="故宫雪景 - 红墙白雪的古韵之美" class="palace-image">
+            <div class="palace-caption">
+                <h4>雪中紫禁城</h4>
+                <p>冬日薄雪覆盖的宫殿屋顶，红色宫墙与白色积雪形成鲜明对比。屋檐下的斗拱雕刻清晰可见，背景中光秃的树枝和空中飞鸟，营造出静谧而庄重的冬季氛围，展现故宫在雪中别样的肃穆之美。</p>
+            </div>
+        </div>
+        
+        <!-- 图片2：屋檐细节 -->
+        <div class="palace-image-card">
+            <img src="images/palace_eave_details.jpg" alt="故宫屋檐细节 - 飞鸟与雕刻艺术" class="palace-image">
+            <div class="palace-caption">
+                <h4>屋檐雕饰与飞鸟</h4>
+                <p>故宫建筑一角，金黄色琉璃瓦在阳光下熠熠生辉。屋檐线条优美流畅，装饰有精美的雕刻图案，展现了古代工匠的高超技艺。几只飞鸟停留在屋檐上，在淡蓝色天空背景中增添灵动感，动静结合的画面体现中式建筑的诗意。</p>
+            </div>
+        </div>
+        
+        <!-- 图片3：金瓦全景 -->
+        <div class="palace-image-card">
+            <img src="images/palace_golden_roof.jpg" alt="故宫金黄色琉璃瓦建筑群" class="palace-image">
+            <div class="palace-caption">
+                <h4>金黄色琉璃瓦建筑群</h4>
+                <p>两座宫殿建筑组成的画面，屋顶覆盖着金黄色的琉璃瓦，在光照下璀璨夺目。右侧建筑的屋檐下可见色彩丰富的彩绘装饰，红柱白栏与金瓦形成经典中式配色。淡蓝天空与白云的简约背景，衬托出故宫建筑的典雅与大气，展现皇家建筑的庄重美感。</p>
+            </div>
+        </div>
+    </div>
+
+<div class="feature-grid">
+    <!-- 宫殿建筑 - 链接到palace.html -->
+    <a href="palace.html" class="feature-card">
+        <h4>🏯 宫殿建筑</h4>
+        <p>紫禁城、颐和园、布达拉宫等皇家建筑群，展现帝王威严与建筑艺术的完美结合。</p>
+    </a>
+    
+    <!-- 宗教建筑 - 链接到religion.html -->
+    <a href="religion.html" class="feature-card">
+        <h4>🛕 宗教建筑</h4>
+        <p>寺庙、佛塔、石窟等宗教建筑，体现中国古代宗教信仰与建筑艺术的融合。</p>
+    </a>
+    
+    <!-- 园林建筑 - 链接到garden.html -->
+    <a href="garden.html" class="feature-card">
+        <h4>🌿 园林建筑</h4>
+        <p>江南园林、皇家园林等，展现"虽由人作，宛自天开"的造园理念。</p>
+    </a>
+    
+    <!-- 防御建筑 - 链接到defense.html -->
+    <a href="defense.html" class="feature-card">
+        <h4>🛡️ 防御建筑</h4>
+        <p>长城、城墙、关隘等防御工程，体现古代军事智慧与工程技术。</p>
+    </a>
+    
+    <!-- 材料与技术 - 链接到technique.html -->
+    <a href="technique.html" class="feature-card">
+        <h4>🔨 材料与技术</h4>
+        <p>木构架、砖石工艺、彩画技术等传统建筑技艺的传承与发展。</p>
+    </a>
+    
+    <!-- 著名人物 - 链接到people.html -->
+    <a href="people.html" class="feature-card">
+        <h4>👤 著名人物</h4>
+        <p>李诫、样式雷家族、梁思成等建筑大师的贡献与成就。</p>
+    </a>
+</div>
+
+
+        <div class="video-container">
+            <h3>故宫博物院100周年新起点（2026年）</h3>
+            <video controls width="100%" poster="images/video_poster.jpg">
+                <source src="videos/palace_museum_centenary.mp4" type="video/mp4">
+                <source src="videos/palace_museum_centenary.webm" type="video/webm">
+                您的浏览器不支持视频播放，请升级浏览器。
+            </video>
+            <p class="video-desc">展示故宫百年变迁与保护成果，见证中国古代建筑艺术的传承与创新</p>
+        </div>
+        
+        <div class="timeline">
+            <h3>中国古建筑发展时间线</h3>
+            <ul>
+                <li><strong>先秦时期（前21世纪-前221年）</strong>：夯土技术成熟，木构架雏形出现，如二里头遗址、殷墟宫殿遗址</li>
+                <li><strong>秦汉时期（前221年-220年）</strong>：宫殿建筑规模扩大，形成"前朝后寝"布局模式，如阿房宫、未央宫</li>
+                <li><strong>唐宋时期（581年-1279年）</strong>：建筑技术达到成熟期，斗拱体系完善，如大明宫、佛光寺</li>
+                <li><strong>辽金元时期（907年-1368年）</strong>：多民族建筑风格融合，如应县木塔、永乐宫</li>
+                <li><strong>明清时期（1368年-1912年）</strong>：建筑规范化、精细化，紫禁城成为中国古代建筑集大成者</li>
+            </ul>
+        </div>
+        
+        <div class="intro-card">
+            <h3>探索中国古代建筑智慧</h3>
+            <p>中国古代建筑不仅注重实用功能，更强调与自然环境的和谐统一。从选址布局到材料选择，从结构设计到装饰艺术，处处体现着"天人合一"的哲学思想。</p>
+            <p>通过本网站，您将深入了解中国古代建筑的独特魅力，感受中华民族在建筑艺术领域的卓越成就，以及这些古老建筑在现代社会的文化价值与保护意义。</p>
+        </div>
+    </section>
+</main>
+
+<div id="music-player" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000; background: rgba(0,0,0,0.8); color: white; padding: 10px; border-radius: 10px; display: none;">
+    <audio id="bgm" loop preload="auto" style="display: none;">
+        <source src="music/background_music.mp3" type="audio/mpeg">
+        您的浏览器不支持音频播放
+    </audio>
+    
+    <div style="display: flex; align-items: center; gap: 10px;">
+        <button id="playPauseBtn" style="background: #8B4513; color: white; border: none; width: 30px; height: 30px; border-radius: 50%; cursor: pointer;">
+            ▶
+        </button>
+        <span id="music-title" style="font-size: 12px;">古风合辑</span>
+        <button id="volumeToggleBtn" style="background: none; border: none; color: white; cursor: pointer; font-size: 16px;">
+            🔈
+        </button>
+        <div id="volumeControl" style="display: none;">
+            <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="0.3" style="width: 60px;">
+        </div>
+    </div>
+</div>
+
+<!-- 音乐控制按钮（固定在页面右下角） -->
+<button id="music-toggle" style="
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #8B4513;
+    color: white;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;">
+    🎵
+</button>
+
+<footer>
+    <p>© 2026 中国古代建筑成就研究中心 | 传承中华建筑文化，弘扬传统工匠精神</p>
+</footer>
+
+<script>
+    // 视频播放优化
+    document.addEventListener('DOMContentLoaded', function() {
+        const video = document.querySelector('video');
+        
+        if(video) {
+            // 添加视频加载提示
+            video.addEventListener('waiting', function() {
+                console.log('视频正在加载，请稍候...');
+            });
+            
+            // 视频播放完成提示
+            video.addEventListener('ended', function() {
+                console.log('视频播放完成，感谢观看！');
+            });
+            
+            // 视频错误处理
+            video.addEventListener('error', function() {
+                const videoContainer = document.querySelector('.video-container');
+                if(videoContainer) {
+                    videoContainer.innerHTML += `
+                        <div style="margin-top: 20px; padding: 15px; background: #fff3cd; border-radius: 4px; border-left: 4px solid #ffc107;">
+                            <p style="margin: 0; color: #856404;">视频加载失败，请检查网络连接或尝试刷新页面。</p>
+                        </div>
+                    `;
+                }
+            });
+        }
+        
+        // 图片懒加载（可选功能）
+        const images = document.querySelectorAll('.palace-image');
+        images.forEach(img => {
+            img.loading = 'lazy';
+        });
+    });
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // 音乐控制元素
+    const audio = document.getElementById('bgm');
+    const musicPlayer = document.getElementById('music-player');
+    const musicToggle = document.getElementById('music-toggle');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const volumeToggleBtn = document.getElementById('volumeToggleBtn');
+    const volumeControl = document.getElementById('volumeControl');
+    const volumeSlider = document.getElementById('volumeSlider');
+    const musicTitle = document.getElementById('music-title');
+
+    // 从LocalStorage恢复播放状态
+    const isPlaying = localStorage.getItem('bgmPlaying') === 'true';
+    const currentTime = parseFloat(localStorage.getItem('bgmTime') || 0);
+    const volume = parseFloat(localStorage.getItem('bgmVolume') || 0.3);
+    const isMuted = localStorage.getItem('bgmMuted') === 'true';
+    
+    // 初始化设置
+    audio.volume = volume;
+    audio.muted = isMuted;
+    volumeSlider.value = volume;
+    
+    // 恢复播放位置
+    if (currentTime > 0) {
+        audio.currentTime = currentTime;
+    }
+    
+    // 恢复播放状态
+    if (isPlaying) {
+        audio.play().catch(e => console.log('自动播放被阻止:', e));
+        playPauseBtn.textContent = '⏸';
+    }
+    
+    // 更新UI
+    updateVolumeIcon();
+
+    // 播放/暂停控制
+    playPauseBtn.addEventListener('click', function() {
+        if (audio.paused) {
+            audio.play();
+            playPauseBtn.textContent = '⏸';
+            localStorage.setItem('bgmPlaying', 'true');
+        } else {
+            audio.pause();
+            playPauseBtn.textContent = '▶';
+            localStorage.setItem('bgmPlaying', 'false');
+        }
+    });
+    
+    // 显示/隐藏音乐播放器
+    musicToggle.addEventListener('click', function() {
+        if (musicPlayer.style.display === 'none') {
+            musicPlayer.style.display = 'block';
+            musicToggle.style.display = 'none';
+        } else {
+            musicPlayer.style.display = 'none';
+        }
+    });
+    
+    // 显示/隐藏音量控制
+    volumeToggleBtn.addEventListener('click', function() {
+        volumeControl.style.display = volumeControl.style.display === 'none' ? 'block' : 'none';
+    });
+    
+    // 音量控制
+    volumeSlider.addEventListener('input', function() {
+        audio.volume = this.value;
+        localStorage.setItem('bgmVolume', this.value);
+        audio.muted = false;
+        updateVolumeIcon();
+    });
+    
+    // 静音切换
+    volumeToggleBtn.addEventListener('click', function(e) {
+        if (e.target !== volumeToggleBtn) return; // 防止与音量控制冲突
+        
+        audio.muted = !audio.muted;
+        localStorage.setItem('bgmMuted', audio.muted);
+        updateVolumeIcon();
+    });
+    
+    // 保存播放时间
+    audio.addEventListener('timeupdate', function() {
+        if (!audio.paused) {
+            localStorage.setItem('bgmTime', audio.currentTime);
+        }
+    });
+    
+    // 页面关闭前保存状态
+    window.addEventListener('beforeunload', function() {
+        localStorage.setItem('bgmTime', audio.currentTime);
+        localStorage.setItem('bgmPlaying', !audio.paused);
+    });
+    
+    // 更新音量图标
+    function updateVolumeIcon() {
+        if (audio.muted || audio.volume === 0) {
+            volumeToggleBtn.innerHTML = '🔇';
+        } else if (audio.volume < 0.5) {
+            volumeToggleBtn.innerHTML = '🔈';
+        } else {
+            volumeToggleBtn.innerHTML = '🔊';
+        }
+    }
+    
+    // 自动播放处理
+    function tryAutoPlay() {
+        if (isPlaying) {
+            audio.play().then(() => {
+                console.log('背景音乐已自动播放');
+            }).catch(e => {
+                console.log('自动播放被阻止，需要用户交互');
+                // 显示提示
+                musicTitle.innerHTML = '点击播放按钮播放音乐';
+            });
+        }
+    }
+    
+    // 用户首次交互后尝试播放
+    document.addEventListener('click', function firstInteraction() {
+        if (audio.paused && isPlaying) {
+            audio.play();
+            playPauseBtn.textContent = '⏸';
+        }
+        document.removeEventListener('click', firstInteraction);
+    }, { once: true });
+    
+    // 尝试自动播放
+    tryAutoPlay();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宗教建筑 - 中国古代建筑成就</title>
+    <style>
+        /* 全局样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", "SimHei", sans-serif;
+        }
+        
+        body {
+            background-color: #f8f5f0;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #2E7D32;
+            transition: color 0.3s;
+        }
+        
+        a:hover {
+            color: #1B5E20;
+        }
+        
+        /* 头部样式 */
+        header {
+            background: linear-gradient(to right, #1B5E20 , #2E7D32 );
+            color: #fff;
+            padding: 1.5rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        header h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        nav a {
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        nav a:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            nav {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+            
+            nav a {
+                width: 80%;
+                text-align: center;
+                margin: 0.3rem 0;
+            }
+        }
+        
+        /* 主内容区样式 */
+        section {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+        
+        h2 {
+            text-align: center;
+            font-size: 2rem;
+            color: #1B5E20;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: #2E7D32;
+        }
+        
+       /* 标题样式 - 修复竖杠问题 */
+        h3 {
+            font-size: 1.5rem;
+            color: #388E3C;
+            margin: 1.5rem 0 1rem;
+            padding-left: 1rem;
+            border-left: 4px solid #8a6642;
+            line-height: 1.4;
+        }
+        
+        /* 文字行间距和颜色 */
+        p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        
+        /* 文字舒展度 - 调整字体和间距 */
+        .content-text {
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            word-spacing: 1px;
+            text-align: justify;
+        }
+
+        h4 {
+            font-size: 1.3rem;
+            color: #2E7D32;
+            margin: 1rem 0 0.5rem;
+        }
+
+        /* 轮播图样式 */
+        .carousel-container {
+            width: 100%;
+            max-width: 900px;
+            margin: 2rem auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            height: 550px;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .carousel-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background-color: #f0f0f0;
+        }
+
+
+/* 修复轮播图文字颜色 */
+
+        .slide-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            color: white !important;
+            padding: 2rem 1.5rem 1.5rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.7);
+        }
+
+        .slide-title {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: white !important;
+            font-weight: 600;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+            letter-spacing: 0.5px;
+        }
+
+        .slide-desc {
+            font-size: 1rem;
+            opacity: 0.95;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.95) !important;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+        }
+        .carousel-controls {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            transform: translateY(-50%);
+            display: flex;
+            justify-content: space-between;
+            padding: 0 1rem;
+            z-index: 10;
+        }
+        
+        .carousel-btn {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+        
+        .carousel-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: scale(1.1);
+        }
+        
+        .carousel-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            z-index: 10;
+        }
+        
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .dot.active {
+            background: white;
+            transform: scale(1.2);
+        }
+        
+        .carousel-counter {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.6);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            z-index: 10;
+        }
+
+        /* 介绍卡片样式 */
+        .intro-card {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin: 2rem 0;
+            border-left: 5px solid #8a6642;
+        }
+        
+        /* 内容详情样式 */
+        .content-detail {
+            margin: 3rem 0;
+        }
+        
+        /* 建筑组样式 */
+        .architecture-group, .technique-card, .garden-card, .symbol-card {
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            margin: 1.5rem 0;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .architecture-group:hover, .technique-card:hover, .garden-card:hover, .symbol-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+        
+        /* 页脚样式 */
+        footer {
+            background-color: #1B5E20;
+            color: #f8f5f0;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .carousel {
+                height: 400px;
+            }
+            
+            .carousel-container {
+                border-radius: 8px;
+            }
+            
+            .slide-info {
+                padding: 1.5rem 1rem 1rem;
+            }
+            
+            .slide-title {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>园林建筑</h1>
+    <nav>
+        <a href="index.html">首页</a>
+        <a href="religion.html">宗教建筑</a>
+        <a href="palace.html">宫殿建筑</a>
+        <a href="garden.html">园林建筑</a>
+        <a href="defense.html">防御建筑</a>
+        <a href="technique.html">材料与技术</a>
+        <a href="people.html">著名人物</a>
+        <a href="contact.html">参考与联系</a>
+    </nav>
+</header>
+
+<section>
+    <h2>中国古典园林艺术</h2>
+    
+    <!-- 轮播图 -->
+    <div class="carousel-container">
+        <div class="carousel" id="gardenCarousel">
+            <!-- 园林图片1 -->
+            <div class="carousel-slide">
+                <img src="images/garden_slide_1.png" alt="古典园林白墙镂空窗" class="carousel-image">
+                <div class="slide-info">
+                    <h3 class="slide-title">园林意境 - 白墙镂空窗</h3>
+                    <p class="slide-desc">传统园林中的"漏窗"设计，通过镂空窗框创造借景效果，将外部绿意引入墙内，体现"小中见大"的园林艺术。</p>
+                </div>
+            </div>
+            
+            <!-- 园林图片2 -->
+            <div class="carousel-slide">
+                <img src="images/garden_slide_2.png" alt="夜晚园林景观" class="carousel-image">
+                <div class="slide-info">
+                    <h3 class="slide-title">夜景园林 - 静谧之美</h3>
+                    <p class="slide-desc">夜晚园林的静谧氛围，灯光映照下的亭台楼阁与水面倒影相映成趣，展现园林在不同时辰的魅力。</p>
+                </div>
+            </div>
+            
+            <!-- 园林图片3 -->
+            <div class="carousel-slide">
+                <img src="images/garden_slide_3.jpg" alt="园林景观" class="carousel-image">
+                <div class="slide-info">
+                    <h3 class="slide-title">园林空间 - 层次分明</h3>
+                    <p class="slide-desc">园林通过空间分割、植物配置和建筑布局，创造出丰富的视觉层次和步移景异的空间体验。</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="carousel-counter">
+            <span id="currentSlide">1</span> / <span id="totalSlides">3</span>
+        </div>
+        
+        <div class="carousel-controls">
+            <button class="carousel-btn" id="prevBtn">‹</button>
+            <button class="carousel-btn" id="nextBtn">›</button>
+        </div>
+        
+        <div class="carousel-dots">
+            <button class="dot active" data-index="0"></button>
+            <button class="dot" data-index="1"></button>
+            <button class="dot" data-index="2"></button>
+        </div>
+    </div>
+    
+    <div style="text-align: center; margin: 1rem 0; color: #666;">
+        <p>使用左右箭头切换图片，或点击下方圆点直接跳转</p>
+    </div>
+    
+        
+    <div class="intro-card">
+        <p>中国古典园林是世界园林艺术的瑰宝，以"虽由人作，宛自天开"为最高境界。它融合了建筑、山水、花木、书画、雕刻等艺术形式，体现了中国人"天人合一"的哲学思想。中国古典园林主要分为皇家园林和私家园林两大类，各具特色。</p>
+        <p>园林不仅是居住环境的延伸，更是文人雅士寄托情怀、表达理想的精神家园。从秦汉的皇家苑囿到唐宋的文人园林，再到明清的成熟园林艺术，中国古典园林走过了两千多年的发展历程，形成了独特的艺术风格和造园理论。</p>
+    </div>
+
+    <div class="content-detail">
+        <h3>江南园林特色</h3>
+        
+        <div class="architecture-group">
+            <h4>苏州园林</h4>
+            <p>苏州园林是中国私家园林的代表，以小巧精致、意境深远著称。拙政园、留园、网师园、环秀山庄被誉为"苏州四大名园"，其中拙政园和留园与北京颐和园、承德避暑山庄并称为"中国四大名园"。</p>
+            <p>苏州园林注重空间布局，通过借景、对景、框景等手法，在有限的空间内创造出无限意境。园内亭台楼阁、假山池水、花木扶疏，处处体现着文人雅士的审美情趣。</p>
+            <p>苏州园林的造园艺术强调"小中见大"，通过精心的空间组织和景观序列，创造出步移景异、曲径通幽的艺术效果。园林中的每一处景致都经过精心设计，体现了造园者对自然美和艺术美的深刻理解。</p>
+        </div>
+        
+        <div class="architecture-group">
+            <h4>扬州园林</h4>
+            <p>扬州园林以瘦西湖为代表，融合了北方园林的雄浑和南方园林的秀美。个园、何园是扬州私家园林的典范，以四季假山和复道回廊著称。</p>
+            <p>扬州园林多建于清代，受盐商文化影响，园林建筑更加富丽堂皇，装饰精美，体现了商贾文化的审美特点。</p>
+            <p>扬州园林在造园手法上独具匠心，如何园的复道回廊长达1500米，将东西两部分园林有机连接，形成独特的立体交通系统。个园则以四季假山闻名，用不同石材营造出春、夏、秋、冬四时景致，体现了造园者的高超技艺。</p>
+        </div>
+    </div>
+
+    <div class="content-detail">
+        <h3>造园手法</h3>
+        
+        <div class="technique-card">
+            <h4>借景</h4>
+            <p>将园外的景色纳入园内视野，扩大空间感。如颐和园借景西山，使园林与自然山水融为一体。借景手法有远借、邻借、仰借、俯借等多种形式，通过巧妙的视线组织，将外部景观融入园林构图，形成内外呼应的艺术效果。</p>
+        </div>
+        
+        <div class="technique-card">
+            <h4>对景</h4>
+            <p>在园林中设置相互呼应的景点，形成视觉焦点。如拙政园的远香堂与雪香云蔚亭隔水相望。对景手法通过视线引导和空间组织，创造出丰富的景观层次和视觉体验，增强园林的艺术感染力。</p>
+        </div>
+        
+        <div class="technique-card">
+            <h4>框景</h4>
+            <p>利用门、窗、洞等建筑构件，将远处的景色框入其中，形成如画般的景致。框景手法如同取景框，将自然景观裁剪成一个个独立的画面，增强了景观的艺术性和观赏性，是中国古典园林独特的造景手法。</p>
+        </div>
+        
+        <div class="technique-card">
+            <h4>障景</h4>
+            <p>在入口或主要游览路线上设置障碍，避免一览无余，增加游览的层次感和神秘感。障景手法通过山石、植物、建筑等元素遮挡视线，引导游客按照预设的路线游览，逐步展开园林景观，增强游览的趣味性和探索性。</p>
+        </div>
+    </div>
+
+    <div class="content-detail">
+        <h3>著名园林案例</h3>
+        
+        <div class="garden-card">
+            <h4>拙政园</h4>
+            <p>位于江苏苏州，始建于明正德年间，占地78亩，是苏州现存最大的古典园林。拙政园以水景为主，水面占全园面积的三分之一，建筑临水而建，体现了"水随山转，山因水活"的造园理念。</p>
+            <p>拙政园分为东、中、西三部分，中部是园林的精华所在，以水池为中心，四周布置亭台楼阁，形成开阔疏朗的景观空间。园内主要建筑有远香堂、雪香云蔚亭、待霜亭等，各建筑之间通过曲廊、小桥相连，形成丰富的游览路线。</p>
+        </div>
+        
+        <div class="garden-card">
+            <h4>颐和园</h4>
+            <p>位于北京，是清代皇家园林，占地290公顷，以昆明湖、万寿山为基址，是中国现存规模最大、保存最完整的皇家园林。颐和园融合了江南园林的秀美和北方园林的雄浑，被誉为"皇家园林博物馆"。</p>
+            <p>颐和园主要由万寿山和昆明湖组成，园内建筑群依山傍水而建，包括仁寿殿、乐寿堂、长廊、佛香阁等著名景观。长廊长达728米，是中国园林中最长的游廊，梁上绘有14000余幅彩画，内容丰富，技艺精湛。</p>
+        </div>
+        
+        <div class="garden-card">
+            <h4>承德避暑山庄</h4>
+            <p>位于河北承德，是清代皇帝夏季避暑和处理政务的场所，占地564万平方米，是中国现存最大的皇家园林。避暑山庄集南北园林之大成，融合了汉族、蒙古族、藏族等民族建筑风格。</p>
+            <p>避暑山庄分为宫殿区、湖泊区、平原区、山峦区四大部分，园内有康熙、乾隆题名的"七十二景"。山庄周围建有包括普陀宗乘之庙、须弥福寿之庙在内的外八庙，这些寺庙建筑风格各异，是汉、蒙、藏文化交融的结晶。</p>
+        </div>
+        
+        <div class="garden-card">
+            <h4>留园</h4>
+            <p>位于江苏苏州，始建于明代，以建筑布局精巧、空间处理巧妙著称。留园的建筑密度较高，但通过巧妙的布局，使空间显得疏密有致，层次丰富。</p>
+            <p>留园以建筑结构见长，厅堂宏敞华丽，庭院富有变化，整个园林采用不规则布局形式，使园林建筑与山、水、石相融合而呈天然之趣。园内空间利用云墙和建筑群划分成中、东、北、西四个景区，景区之间以曲廊相连，迂回连绵，达700余米，通幽度壑，秀色迭出。</p>
+        </div>
+    </div>
+</section>
+
+<!-- 音频播放器（放在所有页面的footer之前） -->
+<div id="music-player" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000; background: rgba(0,0,0,0.8); color: white; padding: 10px; border-radius: 10px; display: none;">
+    <audio id="bgm" loop preload="auto" style="display: none;">
+        <source src="music/background_music.mp3" type="audio/mpeg">
+        您的浏览器不支持音频播放
+    </audio>
+    
+    <div style="display: flex; align-items: center; gap: 10px;">
+        <button id="playPauseBtn" style="background: #8B4513; color: white; border: none; width: 30px; height: 30px; border-radius: 50%; cursor: pointer;">
+            ▶
+        </button>
+        <span id="music-title" style="font-size: 12px;">古风合辑</span>
+        <button id="volumeToggleBtn" style="background: none; border: none; color: white; cursor: pointer; font-size: 16px;">
+            🔈
+        </button>
+        <div id="volumeControl" style="display: none;">
+            <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="0.3" style="width: 60px;">
+        </div>
+    </div>
+</div>
+
+<!-- 音乐控制按钮（固定在页面右下角） -->
+<button id="music-toggle" style="
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #8B4513;
+    color: white;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;">
+    🎵
+</button>
+
+<footer>© 2026 中国古代建筑成就</footer>
+<script>
+    // 园林轮播图功能
+    const gardenCarousel = document.getElementById('gardenCarousel');
+    const slides = document.querySelectorAll('.carousel-slide');
+    const dots = document.querySelectorAll('.dot');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const currentSlideSpan = document.getElementById('currentSlide');
+    const totalSlidesSpan = document.getElementById('totalSlides');
+    
+    let currentIndex = 0;
+    const totalSlides = slides.length;
+    totalSlidesSpan.textContent = totalSlides;
+    
+    // 更新轮播图位置
+    function updateCarousel() {
+        gardenCarousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+        currentSlideSpan.textContent = currentIndex + 1;
+        
+        // 更新圆点状态
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentIndex);
+        });
+    }
+    
+    // 下一张
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        updateCarousel();
+    }
+    
+    // 上一张
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        updateCarousel();
+    }
+    
+    // 事件监听
+    prevBtn.addEventListener('click', prevSlide);
+    nextBtn.addEventListener('click', nextSlide);
+    
+    // 圆点点击
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            currentIndex = index;
+            updateCarousel();
+        });
+    });
+    
+    // 键盘控制
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') prevSlide();
+        if (e.key === 'ArrowRight') nextSlide();
+    });
+    
+    // 自动轮播（可选）
+    let autoPlay = setInterval(nextSlide, 5000);
+    
+    // 鼠标悬停时暂停自动轮播
+    const container = document.querySelector('.carousel-container');
+    container.addEventListener('mouseenter', () => {
+        clearInterval(autoPlay);
+    });
+    
+    container.addEventListener('mouseleave', () => {
+        autoPlay = setInterval(nextSlide, 5000);
+    });
+    
+    // 触摸滑动（移动端）
+    let startX = 0;
+    let endX = 0;
+    
+    container.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+    });
+    
+    container.addEventListener('touchend', (e) => {
+        endX = e.changedTouches[0].clientX;
+        const diff = startX - endX;
+        
+        if (Math.abs(diff) > 50) { // 滑动阈值
+            if (diff > 0) {
+                nextSlide(); // 向左滑动
+            } else {
+                prevSlide(); // 向右滑动
+            }
+        }
+    });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // 音乐控制元素
+    const audio = document.getElementById('bgm');
+    const musicPlayer = document.getElementById('music-player');
+    const musicToggle = document.getElementById('music-toggle');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const volumeToggleBtn = document.getElementById('volumeToggleBtn');
+    const volumeControl = document.getElementById('volumeControl');
+    const volumeSlider = document.getElementById('volumeSlider');
+    const musicTitle = document.getElementById('music-title');
+
+    // 从LocalStorage恢复播放状态
+    const isPlaying = localStorage.getItem('bgmPlaying') === 'true';
+    const currentTime = parseFloat(localStorage.getItem('bgmTime') || 0);
+    const volume = parseFloat(localStorage.getItem('bgmVolume') || 0.3);
+    const isMuted = localStorage.getItem('bgmMuted') === 'true';
+    
+    // 初始化设置
+    audio.volume = volume;
+    audio.muted = isMuted;
+    volumeSlider.value = volume;
+    
+    // 恢复播放位置
+    if (currentTime > 0) {
+        audio.currentTime = currentTime;
+    }
+    
+    // 恢复播放状态
+    if (isPlaying) {
+        audio.play().catch(e => console.log('自动播放被阻止:', e));
+        playPauseBtn.textContent = '⏸';
+    }
+    
+    // 更新UI
+    updateVolumeIcon();
+
+    // 播放/暂停控制
+    playPauseBtn.addEventListener('click', function() {
+        if (audio.paused) {
+            audio.play();
+            playPauseBtn.textContent = '⏸';
+            localStorage.setItem('bgmPlaying', 'true');
+        } else {
+            audio.pause();
+            playPauseBtn.textContent = '▶';
+            localStorage.setItem('bgmPlaying', 'false');
+        }
+    });
+    
+    // 显示/隐藏音乐播放器
+    musicToggle.addEventListener('click', function() {
+        if (musicPlayer.style.display === 'none') {
+            musicPlayer.style.display = 'block';
+            musicToggle.style.display = 'none';
+        } else {
+            musicPlayer.style.display = 'none';
+        }
+    });
+    
+    // 显示/隐藏音量控制
+    volumeToggleBtn.addEventListener('click', function() {
+        volumeControl.style.display = volumeControl.style.display === 'none' ? 'block' : 'none';
+    });
+    
+    // 音量控制
+    volumeSlider.addEventListener('input', function() {
+        audio.volume = this.value;
+        localStorage.setItem('bgmVolume', this.value);
+        audio.muted = false;
+        updateVolumeIcon();
+    });
+    
+    // 静音切换
+    volumeToggleBtn.addEventListener('click', function(e) {
+        if (e.target !== volumeToggleBtn) return; // 防止与音量控制冲突
+        
+        audio.muted = !audio.muted;
+        localStorage.setItem('bgmMuted', audio.muted);
+        updateVolumeIcon();
+    });
+    
+    // 保存播放时间
+    audio.addEventListener('timeupdate', function() {
+        if (!audio.paused) {
+            localStorage.setItem('bgmTime', audio.currentTime);
+        }
+    });
+    
+    // 页面关闭前保存状态
+    window.addEventListener('beforeunload', function() {
+        localStorage.setItem('bgmTime', audio.currentTime);
+        localStorage.setItem('bgmPlaying', !audio.paused);
+    });
+    
+    // 更新音量图标
+    function updateVolumeIcon() {
+        if (audio.muted || audio.volume === 0) {
+            volumeToggleBtn.innerHTML = '🔇';
+        } else if (audio.volume < 0.5) {
+            volumeToggleBtn.innerHTML = '🔈';
+        } else {
+            volumeToggleBtn.innerHTML = '🔊';
+        }
+    }
+    
+    // 自动播放处理
+    function tryAutoPlay() {
+        if (isPlaying) {
+            audio.play().then(() => {
+                console.log('背景音乐已自动播放');
+            }).catch(e => {
+                console.log('自动播放被阻止，需要用户交互');
+                // 显示提示
+                musicTitle.innerHTML = '点击播放按钮播放音乐';
+            });
+        }
+    }
+    
+    // 用户首次交互后尝试播放
+    document.addEventListener('click', function firstInteraction() {
+        if (audio.paused && isPlaying) {
+            audio.play();
+            playPauseBtn.textContent = '⏸';
+        }
+        document.removeEventListener('click', firstInteraction);
+    }, { once: true });
+    
+    // 尝试自动播放
+    tryAutoPlay();
+});
+</script>
+
+</body>
+</html>

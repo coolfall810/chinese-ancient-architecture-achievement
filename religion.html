@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宗教建筑 - 中国古代建筑成就</title>
+    <style>
+        /* 全局样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", "SimHei", sans-serif;
+        }
+        
+        body {
+            background-color: #f8f5f0;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #8a6642;
+            transition: color 0.3s;
+        }
+        
+        a:hover {
+            color: #6b4f35;
+        }
+        
+        /* 头部样式 */
+        header {
+            background: linear-gradient(to right, #8B7355, #B8860B);
+            color: #fff;
+            padding: 1.5rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        header h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        nav a {
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        nav a:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+ 
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            nav {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+            
+            nav a {
+                width: 80%;
+                text-align: center;
+                margin: 0.3rem 0;
+            }
+        }
+       
+        /* 主内容区样式 */
+        section {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+        
+        h2 {
+            text-align: center;
+            font-size: 2rem;
+            color: #8a6642;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: #8a6642;
+        }
+        
+       /* 标题样式 - 修复竖杠问题 */
+        h3 {
+            font-size: 1.5rem;
+            color: #8a6642;
+            margin: 1.5rem 0 1rem;
+            padding-left: 1rem;
+            border-left: 4px solid #8a6642;
+            line-height: 1.4;
+        }
+        
+        /* 文字行间距和颜色 */
+        p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        
+        /* 文字舒展度 - 调整字体和间距 */
+        .content-text {
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            word-spacing: 1px;
+            text-align: justify;
+        }
+
+        h4 {
+            font-size: 1.3rem;
+            color: #8b4513;
+            margin: 1rem 0 0.5rem;
+        }
+
+        /* 轮播图样式 */
+        .carousel-container {
+            width: 100%;
+            max-width: 900px;
+            margin: 2rem auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            height: 550px;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .carousel-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background-color: #f0f0f0;
+        }
+
+
+/* 修复轮播图文字颜色 */
+
+        .slide-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            color: white !important;
+            padding: 2rem 1.5rem 1.5rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.7);
+        }
+
+        .slide-title {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: white !important;
+            font-weight: 600;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+            letter-spacing: 0.5px;
+        }
+
+        .slide-desc {
+            font-size: 1rem;
+            opacity: 0.95;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.95) !important;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .carousel-controls {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            transform: translateY(-50%);
+            display: flex;
+            justify-content: space-between;
+            padding: 0 1rem;
+            z-index: 10;
+        }
+        
+        .carousel-btn {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+        
+        .carousel-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: scale(1.1);
+        }
+        
+        .carousel-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            z-index: 10;
+        }
+        
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .dot.active {
+            background: white;
+            transform: scale(1.2);
+        }
+        
+        .carousel-counter {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.6);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            z-index: 10;
+        }
+        
+        /* 介绍卡片样式 */
+        .intro-card {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin: 2rem 0;
+            border-left: 5px solid #8a6642;
+        }
+        
+        /* 内容详情样式 */
+        .content-detail {
+            margin: 3rem 0;
+        }
+        
+        /* 建筑组样式 */
+        .architecture-group, .technique-card, .garden-card, .symbol-card {
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            margin: 1.5rem 0;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .architecture-group:hover, .technique-card:hover, .garden-card:hover, .symbol-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+        
+        /* 页脚样式 */
+        footer {
+            background-color: #8B7355;
+            color: #f8f5f0;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .carousel {
+                height: 450px;
+            }
+            
+            .carousel-container {
+                border-radius: 8px;
+            }
+            
+            .slide-info {
+                padding: 1.5rem 1rem 1rem;
+            }
+            
+            .slide-title {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>宗教建筑</h1>
+    <nav>
+        <a href="index.html">首页</a>
+        <a href="religion.html">宗教建筑</a>
+        <a href="palace.html">宫殿建筑</a>
+        <a href="garden.html">园林建筑</a>
+        <a href="defense.html">防御建筑</a>
+        <a href="technique.html">材料与技术</a>
+        <a href="people.html">著名人物</a>
+        <a href="contact.html">参考与联系</a>
+    </nav>
+</header>
+
+<section>
+    <h2>中国宗教建筑艺术</h2>
+
+<!-- 轮播图 -->
+    <div class="carousel-container">
+        <div class="carousel" id="religionCarousel">
+            <!-- 宗教图片1 - 修正描述 -->
+            <div class="carousel-slide">
+                <img src="images/religion_slide_1.png" alt="信众焚香祈福" class="carousel-image">
+                <div class="slide-info">
+                    <h3 class="slide-title">虔诚信众 - 焚香祈福</h3>
+                    <p class="slide-desc">寺庙中众多信众手持点燃的香，躬身敬拜。香炉中烟雾缭绕，香火旺盛，营造出庄严肃穆的宗教氛围。</p>
+                </div>
+            </div>
+        
+        <!-- 宗教图片2 -->
+            <div class="carousel-slide">
+                <img src="images/religion_slide_2.jpg" alt="佛教元素拼图" class="carousel-image">
+                <div class="slide-info">
+                    <h3 class="slide-title">佛教元素 - 多元呈现</h3>
+                    <p class="slide-desc">佛教文化元素的集合展示，包含"镇三洲"牌匾、佛像、手印、浮雕等多种佛教艺术形式，展现佛教文化的丰富内涵。</p>
+                </div>
+            </div>
+        </div>
+    
+        <div class="carousel-counter">
+            <span id="currentSlide">1</span> / <span id="totalSlides">2</span>
+        </div>
+    
+        <div class="carousel-controls">
+        <button class="carousel-btn" id="prevBtn">‹</button>
+        <button class="carousel-btn" id="nextBtn">›</button>
+    </div>
+    
+        <div class="carousel-dots">
+            <button class="dot active" data-index="0"></button>
+            <button class="dot" data-index="1"></button>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin: 1rem 0; color: #666;">
+             <p>使用左右箭头切换图片，或点击下方圆点直接跳转</p>
+    </div>
+
+
+    <div class="intro-card">
+        <p>中国宗教建筑主要包括佛教、道教、伊斯兰教等建筑类型，它们在中国建筑史上占有重要地位。这些建筑不仅体现了宗教信仰，还融合了各民族的建筑艺术，形成了独特的建筑风格。佛教寺庙、道教宫观、伊斯兰教清真寺等，都是中国建筑艺术的瑰宝。</p>
+        <p>中国宗教建筑的发展与宗教传播密切相关，不同时期的宗教建筑反映了当时的政治、经济、文化状况。从东汉佛教传入中国，到唐代佛教鼎盛，再到宋元时期伊斯兰教、基督教等外来宗教的传播，中国宗教建筑不断吸收外来元素，并与本土建筑传统相融合，形成了丰富多彩的建筑类型。</p>
+    </div>
+
+    <div class="content-detail">
+        <h3>佛教建筑</h3>
+        
+        <div class="architecture-group">
+            <h4>寺庙布局</h4>
+            <p>中国佛教寺庙一般采用中轴线对称布局，主要建筑包括山门、天王殿、大雄宝殿、藏经阁等。山门是寺庙的正门，天王殿供奉四大天王，大雄宝殿是寺庙的主殿，供奉释迦牟尼佛。</p>
+            <p>中国佛教寺庙的布局经历了从以塔为中心到以殿为中心的演变。早期的佛寺以佛塔为中心，四周环绕僧房，形成"前塔后殿"的格局。隋唐以后，逐渐演变为以佛殿为中心，塔则建于寺旁或寺后，形成"前殿后塔"的格局。这种变化反映了佛教中国化的过程，也体现了中国建筑注重轴线对称的审美特点。</p>
+        </div>
+        
+        <div class="architecture-group">
+            <h4>佛塔</h4>
+            <p>佛塔是佛教建筑的标志，用于供奉佛舍利或经卷。中国佛塔主要有楼阁式塔、密檐式塔、喇嘛塔等类型。著名的佛塔有西安大雁塔、应县木塔、杭州雷峰塔等。</p>
+            <p>中国佛塔在印度窣堵坡的基础上，结合中国传统楼阁建筑形式，形成了独特的建筑风格。楼阁式塔如西安大雁塔，外观似多层楼阁，每层均有门窗，可供登临远眺。密檐式塔如河南嵩岳寺塔，塔身下部较高，上部檐层密集，整体呈抛物线形。喇嘛塔主要流行于藏传佛教地区，如北京妙应寺白塔，塔身呈覆钵形，上有相轮和宝盖。</p>
+        </div>
+        
+        <div class="architecture-group">
+            <h4>石窟</h4>
+            <p>石窟是开凿在崖壁上的佛教建筑，用于修行和供奉佛像。中国著名的石窟有敦煌莫高窟、云冈石窟、龙门石窟、麦积山石窟等，这些石窟保存了大量精美的佛教造像和壁画。</p>
+            <p>中国石窟艺术始于3世纪，盛于5-8世纪，余波延续至16世纪。石窟的形制主要有中心塔柱窟、佛殿窟、僧房窟等。中心塔柱窟源于印度支提窟，窟内中央设塔柱，供信徒绕塔礼拜。佛殿窟平面呈方形，后壁开龛造像，是举行佛事活动的场所。僧房窟是僧人居住修行的洞窟，一般较为简朴。</p>
+        </div>
+    </div>
+
+    <div class="content-detail">
+        <h3>道教建筑</h3>
+        
+        <div class="architecture-group">
+            <h4>宫观布局</h4>
+            <p>道教宫观多建在名山之中，依山就势，与自然环境融为一体。主要建筑包括山门、灵官殿、三清殿、玉皇殿等。道教建筑注重风水，讲究"藏风聚气"。</p>
+            <p>道教宫观的布局深受道教宇宙观和神仙思想的影响。一般以三清殿为中心，供奉道教最高神三清尊神。玉皇殿供奉玉皇大帝，是道教的天界主宰。宫观建筑多采用中国传统院落式布局，但比佛教寺庙更为灵活，常依山势而建，形成错落有致的建筑群。道教建筑装饰中常见八卦、太极、暗八仙等图案，体现了道教的宗教象征。</p>
+        </div>
+        
+        <div class="architecture-group">
+            <h4>著名道观</h4>
+            <p>武当山古建筑群是道教建筑的杰出代表，包括紫霄宫、金殿等建筑，体现了道教"天人合一"的思想。青城山、龙虎山、齐云山等也是道教名山，保存了大量道教建筑。</p>
+            <p>武当山古建筑群始建于唐，盛于明，现存建筑多为明代所建。紫霄宫是武当山保存最完整的宫殿之一，依山而建，层层叠叠，气势宏伟。金殿位于天柱峰顶，全部为铜铸鎏金，是中国古代铜铸建筑的珍品。青城山是道教发源地之一，山中有建福宫、天师洞、上清宫等道观，建筑与自然环境完美融合，体现了道教崇尚自然的思想。</p>
+        </div>
+    </div>
+
+    <div class="content-detail">
+        <h3>伊斯兰教建筑</h3>
+        
+        <div class="architecture-group">
+            <h4>清真寺</h4>
+            <p>中国伊斯兰教清真寺融合了阿拉伯建筑风格和中国传统建筑风格，形成了独特的建筑形式。主要建筑包括礼拜大殿、邦克楼、水房等。礼拜大殿朝向麦加方向，内部不设偶像。</p>
+            <p>中国清真寺主要有两种类型：一种是阿拉伯式，如泉州清净寺、广州怀圣寺，保持阿拉伯建筑风格，有穹顶、拱券等特征；另一种是中国传统殿宇式，如西安化觉巷清真寺、北京牛街礼拜寺，采用中国传统建筑形式，但内部装饰和功能布局符合伊斯兰教要求。中国传统殿宇式清真寺一般由照壁、大门、邦克楼、礼拜大殿等组成，形成多进院落布局。</p>
+        </div>
+        
+        <div class="architecture-group">
+            <h4>著名清真寺</h4>
+            <p>西安化觉巷清真寺、北京牛街礼拜寺、泉州清净寺等是中国著名的清真寺。这些清真寺既有阿拉伯建筑的穹顶、拱券等元素，又采用了中国传统建筑的木构架、琉璃瓦等。</p>
+            <p>西安化觉巷清真寺是中国现存规模最大、保存最完整的清真寺之一，始建于唐，历经宋、元、明、清各代维修扩建。寺院占地12000平方米，建筑面积4000平方米，采用中国传统的四合院布局，但朝向为东西向，礼拜大殿面向麦加方向。泉州清净寺是中国现存最古老的伊斯兰教寺之一，建于北宋，具有典型的阿拉伯建筑风格，是中外文化交流的重要见证。</p>
+        </div>
+    </div>
+
+    <div class="content-detail">
+        <h3>宗教建筑的象征意义</h3>
+        
+        <div class="symbol-card">
+            <h4>数字象征</h4>
+            <p>佛教建筑中，数字"三"代表佛、法、僧三宝，"七"代表七级浮屠，"十三"代表十三层天。道教建筑中，数字"九"代表九重天，"三十六"代表三十六天罡。</p>
+            <p>数字在中国宗教建筑中具有丰富的象征意义。佛教塔的层数多为奇数，如七级、九级、十三级等，象征佛教的等级观念和修行次第。道教建筑中，"九"是极阳之数，象征天，故道教宫观中常见九开间的大殿、九重台阶等。"三十六"和"七十二"是道教常用的神秘数字，分别代表三十六天罡和七十二地煞。</p>
+        </div>
+        
+        <div class="symbol-card">
+            <h4>色彩象征</h4>
+            <p>黄色代表佛教的尊贵，红色代表吉祥喜庆，绿色代表生命和希望。道教建筑多用青、黑、白等颜色，象征阴阳五行。</p>
+            <p>中国宗教建筑的色彩运用具有深刻的象征意义。佛教建筑中，黄色是佛陀的颜色，象征光明和智慧，故佛教寺庙常用黄色琉璃瓦。红色象征吉祥和生命力，是佛教建筑中常见的颜色。道教建筑色彩与五行相对应：青色属木，象征东方和生命；黑色属水，象征北方和玄妙；白色属金，象征西方和纯洁。道教宫观的色彩多朴素淡雅，体现道教崇尚自然的理念。</p>
+        </div>
+        
+        <div class="symbol-card">
+            <h4>方位象征</h4>
+            <p>佛教寺庙坐北朝南，象征佛法普照。道教宫观多依山而建，讲究"左青龙、右白虎、前朱雀、后玄武"的风水格局。</p>
+            <p>方位在中国宗教建筑中具有重要的象征意义。佛教寺庙一般坐北朝南，主体建筑沿中轴线对称布置，象征佛法的庄严和秩序。道教宫观的方位选择更为灵活，但注重风水格局，追求与自然环境的和谐。道教认为，理想的建筑环境应有"四灵"护卫：左侧有流水为青龙，右侧有大道为白虎，前方有池塘为朱雀，后方有丘陵为玄武。这种风水观念深刻影响了道教建筑的选址和布局。</p>
+        </div>
+    </div>
+
+</section>
+
+<!-- 音频播放器（放在所有页面的footer之前） -->
+<div id="music-player" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000; background: rgba(0,0,0,0.8); color: white; padding: 10px; border-radius: 10px; display: none;">
+    <audio id="bgm" loop preload="auto" style="display: none;">
+        <source src="music/background_music.mp3" type="audio/mpeg">
+        您的浏览器不支持音频播放
+    </audio>
+    
+    <div style="display: flex; align-items: center; gap: 10px;">
+        <button id="playPauseBtn" style="background: #8B4513; color: white; border: none; width: 30px; height: 30px; border-radius: 50%; cursor: pointer;">
+            ▶
+        </button>
+        <span id="music-title" style="font-size: 12px;">古风合辑</span>
+        <button id="volumeToggleBtn" style="background: none; border: none; color: white; cursor: pointer; font-size: 16px;">
+            🔈
+        </button>
+        <div id="volumeControl" style="display: none;">
+            <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="0.3" style="width: 60px;">
+        </div>
+    </div>
+</div>
+
+<!-- 音乐控制按钮（固定在页面右下角） -->
+<button id="music-toggle" style="
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #8B4513;
+    color: white;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;">
+    🎵
+</button>
+
+<footer>© 2026 中国古代建筑成就</footer>
+
+<script>
+    // 宗教轮播图功能
+    const religionCarousel = document.getElementById('religionCarousel');
+    const slides = document.querySelectorAll('#religionCarousel .carousel-slide');
+    const dots = document.querySelectorAll('#religionCarousel ~ .carousel-dots .dot');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const currentSlideSpan = document.getElementById('currentSlide');
+    const totalSlidesSpan = document.getElementById('totalSlides');
+    
+    let currentIndex = 0;
+    const totalSlides = slides.length;
+    totalSlidesSpan.textContent = totalSlides;
+    
+    // 更新轮播图位置
+    function updateCarousel() {
+        religionCarousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+        currentSlideSpan.textContent = currentIndex + 1;
+        
+        // 更新圆点状态
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentIndex);
+        });
+    }
+    
+    // 下一张
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        updateCarousel();
+    }
+    
+    // 上一张
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        updateCarousel();
+    }
+    
+    // 事件监听
+    prevBtn.addEventListener('click', prevSlide);
+    nextBtn.addEventListener('click', nextSlide);
+    
+    // 圆点点击
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            currentIndex = index;
+            updateCarousel();
+        });
+    });
+    
+    // 键盘控制
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') prevSlide();
+        if (e.key === 'ArrowRight') nextSlide();
+    });
+    
+    // 自动轮播（可选）
+    let autoPlay = setInterval(nextSlide, 5000);
+    
+    // 鼠标悬停时暂停自动轮播
+    const container = document.querySelector('.carousel-container');
+    container.addEventListener('mouseenter', () => {
+        clearInterval(autoPlay);
+    });
+    
+    container.addEventListener('mouseleave', () => {
+        autoPlay = setInterval(nextSlide, 5000);
+    });
+    
+    // 触摸滑动（移动端）
+    let startX = 0;
+    let endX = 0;
+    
+    container.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+    });
+    
+    container.addEventListener('touchend', (e) => {
+        endX = e.changedTouches[0].clientX;
+        const diff = startX - endX;
+        
+        if (Math.abs(diff) > 50) { // 滑动阈值
+            if (diff > 0) {
+                nextSlide(); // 向左滑动
+            } else {
+                prevSlide(); // 向右滑动
+            }
+        }
+    });
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // 音乐控制元素
+    const audio = document.getElementById('bgm');
+    const musicPlayer = document.getElementById('music-player');
+    const musicToggle = document.getElementById('music-toggle');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const volumeToggleBtn = document.getElementById('volumeToggleBtn');
+    const volumeControl = document.getElementById('volumeControl');
+    const volumeSlider = document.getElementById('volumeSlider');
+    const musicTitle = document.getElementById('music-title');
+
+    // 从LocalStorage恢复播放状态
+    const isPlaying = localStorage.getItem('bgmPlaying') === 'true';
+    const currentTime = parseFloat(localStorage.getItem('bgmTime') || 0);
+    const volume = parseFloat(localStorage.getItem('bgmVolume') || 0.3);
+    const isMuted = localStorage.getItem('bgmMuted') === 'true';
+    
+    // 初始化设置
+    audio.volume = volume;
+    audio.muted = isMuted;
+    volumeSlider.value = volume;
+    
+    // 恢复播放位置
+    if (currentTime > 0) {
+        audio.currentTime = currentTime;
+    }
+    
+    // 恢复播放状态
+    if (isPlaying) {
+        audio.play().catch(e => console.log('自动播放被阻止:', e));
+        playPauseBtn.textContent = '⏸';
+    }
+    
+    // 更新UI
+    updateVolumeIcon();
+
+    // 播放/暂停控制
+    playPauseBtn.addEventListener('click', function() {
+        if (audio.paused) {
+            audio.play();
+            playPauseBtn.textContent = '⏸';
+            localStorage.setItem('bgmPlaying', 'true');
+        } else {
+            audio.pause();
+            playPauseBtn.textContent = '▶';
+            localStorage.setItem('bgmPlaying', 'false');
+        }
+    });
+    
+    // 显示/隐藏音乐播放器
+    musicToggle.addEventListener('click', function() {
+        if (musicPlayer.style.display === 'none') {
+            musicPlayer.style.display = 'block';
+            musicToggle.style.display = 'none';
+        } else {
+            musicPlayer.style.display = 'none';
+        }
+    });
+    
+    // 显示/隐藏音量控制
+    volumeToggleBtn.addEventListener('click', function() {
+        volumeControl.style.display = volumeControl.style.display === 'none' ? 'block' : 'none';
+    });
+    
+    // 音量控制
+    volumeSlider.addEventListener('input', function() {
+        audio.volume = this.value;
+        localStorage.setItem('bgmVolume', this.value);
+        audio.muted = false;
+        updateVolumeIcon();
+    });
+    
+    // 静音切换
+    volumeToggleBtn.addEventListener('click', function(e) {
+        if (e.target !== volumeToggleBtn) return; // 防止与音量控制冲突
+        
+        audio.muted = !audio.muted;
+        localStorage.setItem('bgmMuted', audio.muted);
+        updateVolumeIcon();
+    });
+    
+    // 保存播放时间
+    audio.addEventListener('timeupdate', function() {
+        if (!audio.paused) {
+            localStorage.setItem('bgmTime', audio.currentTime);
+        }
+    });
+    
+    // 页面关闭前保存状态
+    window.addEventListener('beforeunload', function() {
+        localStorage.setItem('bgmTime', audio.currentTime);
+        localStorage.setItem('bgmPlaying', !audio.paused);
+    });
+    
+    // 更新音量图标
+    function updateVolumeIcon() {
+        if (audio.muted || audio.volume === 0) {
+            volumeToggleBtn.innerHTML = '🔇';
+        } else if (audio.volume < 0.5) {
+            volumeToggleBtn.innerHTML = '🔈';
+        } else {
+            volumeToggleBtn.innerHTML = '🔊';
+        }
+    }
+    
+    // 自动播放处理
+    function tryAutoPlay() {
+        if (isPlaying) {
+            audio.play().then(() => {
+                console.log('背景音乐已自动播放');
+            }).catch(e => {
+                console.log('自动播放被阻止，需要用户交互');
+                // 显示提示
+                musicTitle.innerHTML = '点击播放按钮播放音乐';
+            });
+        }
+    }
+    
+    // 用户首次交互后尝试播放
+    document.addEventListener('click', function firstInteraction() {
+        if (audio.paused && isPlaying) {
+            audio.play();
+            playPauseBtn.textContent = '⏸';
+        }
+        document.removeEventListener('click', firstInteraction);
+    }, { once: true });
+    
+    // 尝试自动播放
+    tryAutoPlay();
+});
+</script>
+</body>
+</html>

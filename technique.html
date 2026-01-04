@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>材料与技术 - 中国古代建筑成就</title>
+    <style>
+        /* 全局样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", "SimHei", sans-serif;
+        }
+        
+        body {
+            background-color: #f8f5f0;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #8a6642;
+            transition: color 0.3s;
+        }
+        
+        a:hover {
+            color: #6b4f35;
+        }
+        
+        /* 头部样式 */
+        header {
+            background: linear-gradient(to right, #556B2F, #8B7355);
+            color: #fff;
+            padding: 1.5rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        header h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        nav a {
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        nav a:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            nav {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+            
+            nav a {
+                width: 80%;
+                text-align: center;
+                margin: 0.3rem 0;
+            }
+        }
+        
+        /* 主内容区样式 */
+        section {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+        
+        h2 {
+            text-align: center;
+            font-size: 2rem;
+            color: #8a6642;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: #8a6642;
+        }
+        
+        /* 标题样式 - 修复竖杠问题 */
+        h3 {
+            font-size: 1.5rem;
+            color: #8a6642;
+            margin: 1.5rem 0 1rem;
+            padding-left: 1rem;
+            border-left: 4px solid #8a6642;
+            line-height: 1.4;
+        }
+        
+        /* 文字行间距和颜色 */
+        p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        
+        h4 {
+            font-size: 1.3rem;
+            color: #8b4513;
+            margin: 1rem 0 0.5rem;
+        }
+
+        /* 新增木构架示意图样式 */
+       .framework-diagram {
+            width: 100%;
+            max-width: 900px;
+            margin: 2.5rem auto; /* 上下增加间距 */
+            border-radius: 12px; /* 增加圆角 */
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1); /* 增强阴影 */
+            overflow: hidden;
+            background: white;
+            padding: 0; /* 移除容器内边距，移到内部元素 */
+        }
+
+        .framework-diagram img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0; /* 移除图片外边距，在父容器控制 */
+            padding: 1.5rem; /* 图片周围增加内边距 */
+            box-sizing: border-box;
+            background: #f9f5f0; /* 浅色背景 */
+        }
+
+        .diagram-info {
+            padding: 2rem; /* 增加内边距 */
+            border-top: 1px solid #eee;
+        }
+
+        .diagram-title {
+            text-align: center;
+            color: #8a6642;
+            margin-bottom: 1.5rem; /* 增加标题下方间距 */
+            font-size: 1.5rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid #f0e6d6;
+        }
+
+        .diagram-info p {
+            line-height: 1.8; /* 增加行高 */
+            margin: 1.2rem 0; /* 增加段落间距 */
+            color: #555;
+            text-align: justify; /* 两端对齐 */
+            font-size: 1.05rem;
+        }
+ 
+        /* 图片样式 */
+        .main-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* 技术轮播图样式 */
+        .technique-carousel-container {
+            width: 100%;
+            max-width: 900px;
+            margin: 2rem auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .technique-carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            height: 500px;
+        }
+
+        .technique-slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .technique-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background-color: #f5f2e9;
+        }
+
+        /* 修复轮播图文字颜色 */
+        .technique-slide-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            color: white !important;
+            padding: 1.8rem 1.5rem 1.2rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.7);
+            min-height: 120px; /* 统一最小高度 */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end; /* 内容底部对齐 */
+        }
+
+        .technique-slide-title {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            color: white !important;
+            font-weight: 600;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+            letter-spacing: 0.5px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2; /* 最多显示2行 */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .technique-slide-desc {
+            font-size: 1rem;
+            opacity: 0.95;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.95) !important;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+            margin-bottom: 0.5rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 3; /* 最多显示3行 */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .technique-controls {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            transform: translateY(-50%);
+            display: flex;
+            justify-content: space-between;
+            padding: 0 1rem;
+            z-index: 10;
+        }
+        
+        .technique-btn {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+        
+        .technique-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: scale(1.1);
+        }
+        
+        .technique-dots {
+            position: absolute;
+            bottom: 15px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            z-index: 10;
+        }
+        
+        .technique-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .technique-dot.active {
+            background: white;
+            transform: scale(1.2);
+        }
+        
+        .technique-counter {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.6);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            z-index: 10;
+        }
+        
+        /* 介绍卡片样式 */
+        .intro-card {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin: 2rem 0;
+            border-left: 5px solid #8a6642;
+        }
+        
+        /* 内容详情样式 */
+        .content-detail {
+            margin: 3rem 0;
+        }
+        
+        /* 建筑组样式 */
+        .architecture-group, .technique-card, .material-card, .process-card {
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            margin: 1.5rem 0;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .architecture-group:hover, .technique-card:hover, .material-card:hover, .process-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+        
+        /* 内容详情样式 */
+        .content-detail {
+            margin: 3rem 0;
+        }
+        
+        /* 建筑组样式 */
+        .architecture-group, .technique-card, .material-card, .process-card {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            margin: 1.5rem 0;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .architecture-group:hover, .technique-card:hover, .material-card:hover, .process-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+        
+        /* 木构架类型网格 */
+.framework-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.8rem; /* 增加网格间距 */
+    margin: 2.5rem 0; /* 增加整体间距 */
+}
+
+.framework-item {
+    background: white;
+    padding: 1.8rem; /* 增加内边距 */
+    border-radius: 10px; /* 增加圆角 */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border-left: 4px solid #d2b48c;
+    transition: all 0.3s ease;
+    line-height: 1.7;
+}
+
+.framework-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.framework-item h4 {
+    color: #8b4513;
+    margin-top: 0;
+    margin-bottom: 1rem; /* 增加标题下方间距 */
+    font-size: 1.3rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid #eee;
+}
+
+.framework-item p {
+    margin: 1rem 0; /* 增加段落间距 */
+    text-align: justify; /* 两端对齐 */
+    color: #555;
+    font-size: 1.05rem;
+}
+
+.framework-name {
+    font-weight: 600;
+    color: #8b4513;
+    display: inline-block;
+    margin-right: 0.8rem;
+    font-size: 1.1rem;
+}
+
+.framework-type {
+    display: inline-block;
+    background: #e6d8c4;
+    color: #8b4513;
+    padding: 3px 10px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+        
+        /* 斗拱特写样式 */
+.dougong-detail {
+    background: white;
+    padding: 2.5rem; /* 增加内边距 */
+    border-radius: 12px; /* 增加圆角 */
+    margin: 2.5rem 0; /* 增加外边距 */
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    line-height: 1.8; /* 统一行高 */
+}
+
+.dougong-detail h3 {
+    color: #8a6642;
+    margin-bottom: 1.5rem; /* 增加标题下方间距 */
+    padding-bottom: 0.8rem;
+    border-bottom: 2px solid #f0e6d6;
+}
+
+.dougong-detail p {
+    color: #555;
+    margin: 1.2rem 0; /* 增加段落间距 */
+    text-align: justify; /* 两端对齐 */
+    font-size: 1.05rem;
+}
+
+.dougong-detail img {
+    margin: 2rem auto; /* 增加图片上下间距 */
+    display: block;
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 1rem; /* 图片内边距 */
+    background: #f9f5f0; /* 浅色背景 */
+}
+
+/* 优化列表 - 专业美观版本 */
+.dougong-detail ul {
+    padding-left: 0; /* 移除默认内边距 */
+    margin: 2rem 0; /* 增加列表整体间距 */
+    list-style: none; /* 去掉默认圆点 */
+}
+
+.dougong-detail li {
+    margin-bottom: 1.5rem; /* 增加列表项间距 */
+    padding: 1.2rem 1.5rem 1.2rem 3rem; /* 增加内边距，左边更多 */
+    position: relative;
+    line-height: 1.7; /* 统一行高 */
+    text-align: justify; /* 两端对齐 */
+    background: #f9f5f0; /* 列表项背景色 */
+    border-radius: 8px;
+    border-left: 4px solid #d2b48c; /* 左边框 */
+    transition: all 0.3s ease;
+}
+
+.dougong-detail li:hover {
+    background: #f5f0e6;
+    transform: translateX(5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* 自定义列表符号 */
+.dougong-detail li:before {
+    content: "●";
+    color: #8a6642;
+    position: absolute;
+    left: 1.5rem;
+    font-size: 1.2em;
+    font-weight: bold;
+    top: 1.2rem;
+}
+
+/* 优化标签样式 */
+.dougong-detail li strong {
+    color: #8b4513;
+    font-weight: 600;
+    display: inline-block;
+    min-width: 120px; /* 让标签对齐 */
+    margin-right: 0.8rem;
+    font-size: 1.05rem;
+    letter-spacing: 0.5px;
+}
+
+        /* 页脚样式 */
+        footer {
+            background-color: #6b4f35;
+            color: #f8f5f0;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+
+ }
+    </style>
+</head>
+<body>
+<header>
+    <h1>材料与技术</h1>
+    <nav>
+        <a href="index.html">首页</a>
+        <a href="religion.html">宗教建筑</a>
+        <a href="palace.html">宫殿建筑</a>
+        <a href="garden.html">园林建筑</a>
+        <a href="defense.html">防御建筑</a>
+        <a href="technique.html">材料与技术</a>
+        <a href="people.html">著名人物</a>
+        <a href="contact.html">参考与联系</a>
+    </nav>
+</header>
+
+
+<section>
+    <h2>中国古代建筑的材料与技术</h2>
+
+        <!-- 技术轮播图 -->
+<div class="technique-carousel-container">
+    <div class="technique-carousel" id="techniqueCarousel">
+        <!-- 图片1 - 木构架结构示意图 -->
+        <div class="technique-slide">
+            <img src="images/technique_slide_1.jpg" alt="木构架结构分类示意图" class="technique-image">
+            <div class="technique-slide-info">
+                <h3 class="technique-slide-title">木构架结构分类详解</h3>
+                <p class="technique-slide-desc">本图系统展示了中国古代建筑的12种木构架结构，包含抬梁式、穿斗式、混合式、干栏式、井干式等主要形式。图中清晰标注了角梁、太平梁、抱头梁、挑尖梁、步架、额枋、普拍枋等关键构件。</p>
+            </div>
+        </div>
+        
+        <!-- 图片2 - 建筑飞檐特写 -->
+        <div class="technique-slide">
+            <img src="images/technique_slide_2.jpg" alt="飞檐翘角与脊兽装饰" class="technique-image">
+            <div class="technique-slide-info">
+                <h3 class="technique-slide-title">飞檐翘角与脊兽装饰</h3>
+                <p class="technique-slide-desc">本图聚焦中式古建筑的飞檐翘角结构，展示多层屋檐的叠构技巧。飞檐上装饰精美的脊兽，色彩以红绿为主，檐下悬挂白色铃铛。飞檐结构不仅美观，还能有效排水防潮。</p>
+            </div>
+        </div>
+        
+        <!-- 图片3 - 斗拱结构细节 -->
+        <div class="technique-slide">
+            <img src="images/technique_slide_3.jpg" alt="斗拱结构艺术与工艺" class="technique-image">
+            <div class="technique-slide-info">
+                <h3 class="technique-slide-title">斗拱结构艺术与工艺</h3>
+                <p class="technique-slide-desc">本图特写木质斗拱结构，展示斗、拱、昂等构件相互穿插堆叠的复杂工艺。斗拱表面雕刻精美的卷草纹，底部设有霸王拳，兼具结构承重和装饰功能，体现建筑等级。</p>
+            </div>
+        </div>
+    </div>
+    
+        <div class="technique-counter">
+            <span id="currentSlide">1</span> / <span id="totalSlides">3</span>
+        </div>
+        
+        <div class="technique-controls">
+            <button class="technique-btn" id="prevBtn">‹</button>
+            <button class="technique-btn" id="nextBtn">›</button>
+        </div>
+        
+        <div class="technique-dots">
+            <button class="technique-dot active" data-index="0"></button>
+            <button class="technique-dot" data-index="1"></button>
+            <button class="technique-dot" data-index="2"></button>
+        </div>
+    </div>
+    
+    <div style="text-align: center; margin: 1rem 0; color: #666;">
+        <p>使用左右箭头切换图片，查看不同建筑技术的详细图解</p>
+    </div>
+    
+    <div class="intro-card">
+        <p>中国古代建筑以木构架体系为核心，形成了独特的建筑技术体系。从材料选择到结构设计，从施工工艺到装饰艺术，都体现了中国古代工匠的智慧和创造力。这一体系不仅满足了建筑的功能需求，还创造了丰富的建筑艺术形式。</p>
+        <p>中国古代建筑技术经过数千年的发展，形成了完整的理论体系和施工规范。宋代《营造法式》和清代《工程做法则例》是古代建筑技术的集大成之作，详细记录了建筑设计、材料选用、施工工艺等方面的规范，对后世建筑产生了深远影响。</p>
+    </div>
+    
+
+    <div class="content-detail">
+        <h3>木构架体系分类</h3>
+        <p>中国古代木构架建筑根据结构形式和受力特点，主要分为以下几种类型：</p>
+        
+        <div class="framework-diagram">  
+            <div class="diagram-info">  
+                <h4 class="diagram-title">中国传统木构架结构示意图</h4>  
+                <img src="images/technique_slide_1.jpg" alt="木构架结构分类示意图">
+                <p>图中展示了12种不同类型的木结构，包括抬梁式、穿斗式、混合式、干栏式、井干式等主要构架形式，以及角梁、太平梁、抱头梁、挑尖梁、步架、额枋、普拍枋等具体构件。每种结构都配有详细标注，展现了古代木构架建筑的多样性和精巧构造。</p>  
+            </div>  
+    </div> 
+        
+        <div class="framework-grid">
+            <div class="framework-item">
+                <h4><span class="framework-name">抬梁式构架</span><span class="framework-type">主流结构</span></h4>
+                <p>主要用于宫殿、寺庙等大型建筑。特点是梁柱层层叠加，形成较大的室内空间。稳定性好，可建造大跨度空间。</p>
+            </div>
+            
+            <div class="framework-item">
+                <h4><span class="framework-name">穿斗式构架</span><span class="framework-type">南方民居</span></h4>
+                <p>多用于南方地区，特点是柱子直接承重，用穿枋连接柱子形成整体框架。用材经济，抗震性能好。</p>
+            </div>
+            
+            <div class="framework-item">
+                <h4><span class="framework-name">混合式构架</span><span class="framework-type">结合型</span></h4>
+                <p>结合了抬梁式和穿斗式的特点，部分立柱直接落地，部分通过梁架承重。兼具两种结构的优点。</p>
+            </div>
+            
+            <div class="framework-item">
+                <h4><span class="framework-name">干栏式构架</span><span class="framework-type">高脚建筑</span></h4>
+                <p>底部有立柱支撑，上层为居住空间。适合潮湿多雨地区，防潮防虫，通风良好。</p>
+            </div>
+            
+            <div class="framework-item">
+                <h4><span class="framework-name">井干式构架</span><span class="framework-type">原始结构</span></h4>
+                <p>用原木或方木层层叠压形成墙体。结构简单实用，保温性能好，多用于山区林区。</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="content-detail">
+        <h3>木构架技术详解</h3>
+        
+        <div class="architecture-group">
+            <h4>抬梁式构架</h4>
+            <p>抬梁式构架是中国古代建筑的主要结构形式，多用于宫殿、寺庙等大型建筑。其特点是梁柱层层叠加，形成较大的室内空间。这种结构形式可以灵活调整建筑的开间和进深，适应不同的功能需求。抬梁式构架中，柱上架梁，梁上再立短柱，短柱上再架梁，如此层层叠加，最后在顶层梁上立脊瓜柱承托脊槫。这种结构稳定性好，可以建造大跨度空间，但用材较多，施工复杂。</p>
+        </div>
+        
+        <div class="architecture-group">
+            <h4>穿斗式构架</h4>
+            <p>穿斗式构架多用于南方民居，其特点是柱子直接承重，用穿枋连接柱子，形成整体框架。这种结构形式用材经济，抗震性能好，适合南方多雨潮湿的气候。穿斗式构架的柱子较密，每根柱子都落地，柱与柱之间用穿枋连接，穿枋既起连接作用，又承担部分荷载。这种结构形式用材节省，施工简便，在南方地区应用广泛。</p>
+        </div>
+        
+        <div class="architecture-group">
+            <h4>井干式构架</h4>
+            <p>井干式构架是用原木或方木层层叠压，形成墙体，多用于山区和林区。这种结构形式简单实用，但耗材较多，现已较少使用。井干式建筑的四壁都是用去皮圆木或方木两端砍成凹槽，然后相互咬合叠置而成，转角处木料交叉咬合，形成牢固的整体。这种结构保温性能好，但通风采光较差，且易发生火灾。</p>
+        </div>
+    </div>
+
+    <div class="dougong-detail">
+        <h3>斗拱结构特写</h3>
+        <p>斗拱是中国古代木构架建筑的标志性构件，具有承重、抗震、装饰等多重功能。</p>
+        
+        <div class="framework-diagram">  
+            <div class="diagram-info">  
+                <h4 class="diagram-title">中国传统木构架结构示意图</h4>  
+                <img src="images/technique_slide_3.jpg" alt="木构架结构分类示意图">
+        
+        <p>图中展示了精美的斗拱结构细节，可以看到：</p>
+        <ul>
+            <li><strong>斗（方形木块）</strong>：承托拱、昂的方形构件，根据位置不同分为栌斗、交互斗、散斗等</li>
+            <li><strong>拱（弓形木条）</strong>：主要受力构件，有华拱、泥道拱、瓜子拱、慢拱等多种形式</li>
+            <li><strong>昂（斜向构件）</strong>：起杠杆作用的斜向构件，有上昂、下昂之分</li>
+            <li><strong>雕饰纹样</strong>：斗拱表面雕刻有精致的卷草纹、云纹等传统图案</li>
+            <li><strong>霸王拳</strong>：下方类似龙头的支撑构件，兼具结构和装饰功能</li>
+        </ul>
+        <p>斗拱的层数（出踩数）代表了建筑的等级，最高可达九踩，用于皇宫大殿等重要建筑。</p>
+    </div>
+
+    <div class="content-detail">
+        <h3>建筑材料分类</h3>
+        
+        <div class="material-card">
+            <h4>木材</h4>
+            <p>木材是中国古代建筑的主要材料，常用树种有松、柏、楠、杉等。木材具有良好的抗压、抗弯性能，且易于加工。古代工匠通过榫卯连接，使木构架具有良好的抗震性能。不同树种有不同的特性，楠木、柏木耐腐蚀，多用于重要建筑；松木、杉木易得，用于一般建筑。木材在使用前需经过干燥、防虫处理，重要构件还要涂刷桐油或生漆进行保护。</p>
+        </div>
+        
+        <div class="material-card">
+            <h4>砖瓦</h4>
+            <p>砖瓦用于墙体、地面和屋顶。青砖质地坚硬，吸水率低，耐久性好。琉璃瓦用于宫殿、寺庙等高级建筑，色彩鲜艳，装饰性强。砖的制作工艺复杂，需经过选土、练泥、制坯、干燥、烧制等工序。瓦分板瓦和筒瓦，板瓦用于铺底，筒瓦用于盖缝。琉璃瓦是在陶瓦表面施釉后二次烧制而成，色彩丰富但造价昂贵。</p>
+        </div>
+        
+        <div class="material-card">
+            <h4>石材</h4>
+            <p>石材用于台基、柱础、栏杆等部位。汉白玉、青石、花岗岩等是常用石材。石材坚固耐久，但加工困难，多用于重要部位。汉白玉质地细腻，颜色洁白，多用于宫殿建筑；青石质地坚硬，耐风化，用于一般建筑；花岗岩强度高，耐磨，用于铺地、台阶等。石材加工需要专门的石匠，采用錾凿、磨光等工艺。</p>
+        </div>
+        
+        <div class="material-card">
+            <h4>土</h4>
+            <p>土用于夯筑墙体和台基。夯土技术是中国古代建筑的重要成就，通过分层夯筑，可以建造高大的城墙和台基。长城、故宫的台基都是用夯土技术建造的。夯土墙的做法是：先用木板支模，然后在模内填入湿度适宜的黄土，用夯具层层夯实。每层虚铺厚度约15-20厘米，夯实后厚度约10-15厘米。夯土墙坚固耐久，且具有良好的保温隔热性能。</p>
+        </div>
+    </div>
+
+    <div class="content-detail">
+        <h3>施工工艺</h3>
+        
+        <div class="process-card">
+            <h4>榫卯连接</h4>
+            <p>榫卯是中国古代木构架的主要连接方式，通过榫头和卯眼的咬合，使构件紧密连接。榫卯连接不需要钉子，具有很好的抗震性能，可以"墙倒屋不塌"。榫卯种类繁多，有直榫、燕尾榫、勾挂榫等，根据不同部位和受力情况选用。榫卯制作要求精度高，榫头与卯眼必须紧密配合，既不能过紧影响安装，也不能过松影响强度。</p>
+        </div>
+        
+        <div class="process-card">
+            <h4>彩画装饰</h4>
+            <p>彩画是中国古代建筑的重要装饰手段，用于保护木材和美化建筑。彩画分为和玺彩画、旋子彩画、苏式彩画等不同等级，用于不同级别的建筑。和玺彩画等级最高，用于宫殿主要建筑，以龙纹为主，用金量大；旋子彩画用于次要宫殿、庙宇，以旋花图案为主；苏式彩画用于园林建筑，题材自由，多绘山水、花鸟、人物故事。</p>
+        </div>
+        
+        <div class="process-card">
+            <h4>琉璃工艺</h4>
+            <p>琉璃瓦是中国古代建筑的高级装饰材料，通过高温烧制而成，色彩鲜艳，耐久性好。琉璃瓦多用于宫殿、寺庙等建筑，体现了建筑的等级和尊贵。琉璃制作工艺复杂：先以陶土为胎，制成瓦形，素烧后施以铅釉，再入窑釉烧。琉璃瓦颜色有黄、绿、蓝、紫等，黄色等级最高，专用于皇宫、陵寝和重要庙宇。</p>
+        </div>
+        
+        <div class="process-card">
+            <h4>石雕技艺</h4>
+            <p>石雕是中国古代建筑的重要装饰手法，用于台基、栏杆、柱础等部位。石雕技法有浮雕、透雕、线刻等，题材包括龙、凤、云、水等吉祥图案。石雕工艺要求工匠有高超的技艺和艺术修养，重要建筑的石雕往往由著名匠师设计制作。故宫的云龙石雕、天坛的蟠龙石雕等都是古代石雕艺术的精品。</p>
+        </div>
+    </div>
+</section>
+
+
+<!-- 音频播放器（放在所有页面的footer之前） -->
+<div id="music-player" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000; background: rgba(0,0,0,0.8); color: white; padding: 10px; border-radius: 10px; display: none;">
+    <audio id="bgm" loop preload="auto" style="display: none;">
+        <source src="music/background_music.mp3" type="audio/mpeg">
+        您的浏览器不支持音频播放
+    </audio>
+    
+    <div style="display: flex; align-items: center; gap: 10px;">
+        <button id="playPauseBtn" style="background: #8B4513; color: white; border: none; width: 30px; height: 30px; border-radius: 50%; cursor: pointer;">
+            ▶
+        </button>
+        <span id="music-title" style="font-size: 12px;">古风合辑</span>
+        <button id="volumeToggleBtn" style="background: none; border: none; color: white; cursor: pointer; font-size: 16px;">
+            🔈
+        </button>
+        <div id="volumeControl" style="display: none;">
+            <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="0.3" style="width: 60px;">
+        </div>
+    </div>
+</div>
+
+<!-- 音乐控制按钮（固定在页面右下角） -->
+<button id="music-toggle" style="
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #8B4513;
+    color: white;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;">
+    🎵
+</button>
+
+<footer>© 2026 中国古代建筑成就</footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('技术轮播图初始化开始...');
+    
+    // 修复选择器
+    const techniqueCarousel = document.getElementById('techniqueCarousel');
+    const slides = document.querySelectorAll('.technique-slide');  // 修复选择器
+    const dots = document.querySelectorAll('.technique-dot');     // 修复选择器
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const currentSlideSpan = document.getElementById('currentSlide');
+    const totalSlidesSpan = document.getElementById('totalSlides');
+    
+    // 调试信息
+    console.log('找到的元素:', {
+        carousel: techniqueCarousel,
+        slides: slides.length,
+        dots: dots.length,
+        prevBtn: prevBtn,
+        nextBtn: nextBtn
+    });
+    
+    if (!techniqueCarousel || !prevBtn || !nextBtn) {
+        console.error('轮播图元素未找到！请检查ID是否正确');
+        return;
+    }
+    
+    let currentIndex = 0;
+    const totalSlides = slides.length;
+    
+    if (totalSlidesSpan) {
+        totalSlidesSpan.textContent = totalSlides;
+    }
+    
+    // 更新轮播图位置
+    function updateCarousel() {
+        techniqueCarousel.style.transform = `translateX(-${currentIndex * 100}%)`;  // 修复变量名
+        if (currentSlideSpan) {
+            currentSlideSpan.textContent = currentIndex + 1;
+        }
+        
+        // 更新圆点状态
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentIndex);
+        });
+    }
+    
+    // 下一张
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        updateCarousel();
+    }
+    
+    // 上一张
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        updateCarousel();
+    }
+    
+    // 修复事件监听
+    prevBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        console.log('上一张按钮被点击');
+        prevSlide();
+    });
+    
+    nextBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        console.log('下一张按钮被点击');
+        nextSlide();
+    });
+    
+    // 圆点点击
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('圆点点击，索引：', index);
+            currentIndex = index;
+            updateCarousel();
+        });
+    });
+    
+    // 键盘控制
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            prevSlide();
+        }
+        if (e.key === 'ArrowRight') {
+            e.preventDefault();
+            nextSlide();
+        }
+    });
+    
+    // 自动轮播
+    let autoPlay = setInterval(nextSlide, 5000);
+    
+    // 鼠标悬停时暂停自动轮播
+    const container = document.querySelector('.technique-carousel-container');
+    if (container) {
+        container.addEventListener('mouseenter', function() {
+            clearInterval(autoPlay);
+        });
+        
+        container.addEventListener('mouseleave', function() {
+            autoPlay = setInterval(nextSlide, 5000);
+        });
+    }
+    
+    // 修复图片点击放大问题
+    document.querySelectorAll('.technique-image').forEach(function(img) {
+        // 移除现有的点击事件
+        img.onclick = null;
+        img.removeAttribute('onclick');
+        
+        // 添加新的事件，但阻止全屏放大
+        img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('图片被点击，但不会放大');
+            return false;
+        });
+    });
+    
+    console.log('技术轮播图初始化完成！');
+});
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // 音乐控制元素
+    const audio = document.getElementById('bgm');
+    const musicPlayer = document.getElementById('music-player');
+    const musicToggle = document.getElementById('music-toggle');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const volumeToggleBtn = document.getElementById('volumeToggleBtn');
+    const volumeControl = document.getElementById('volumeControl');
+    const volumeSlider = document.getElementById('volumeSlider');
+    const musicTitle = document.getElementById('music-title');
+
+    // 从LocalStorage恢复播放状态
+    const isPlaying = localStorage.getItem('bgmPlaying') === 'true';
+    const currentTime = parseFloat(localStorage.getItem('bgmTime') || 0);
+    const volume = parseFloat(localStorage.getItem('bgmVolume') || 0.3);
+    const isMuted = localStorage.getItem('bgmMuted') === 'true';
+    
+    // 初始化设置
+    audio.volume = volume;
+    audio.muted = isMuted;
+    volumeSlider.value = volume;
+    
+    // 恢复播放位置
+    if (currentTime > 0) {
+        audio.currentTime = currentTime;
+    }
+    
+    // 恢复播放状态
+    if (isPlaying) {
+        audio.play().catch(e => console.log('自动播放被阻止:', e));
+        playPauseBtn.textContent = '⏸';
+    }
+    
+    // 更新UI
+    updateVolumeIcon();
+
+    // 播放/暂停控制
+    playPauseBtn.addEventListener('click', function() {
+        if (audio.paused) {
+            audio.play();
+            playPauseBtn.textContent = '⏸';
+            localStorage.setItem('bgmPlaying', 'true');
+        } else {
+            audio.pause();
+            playPauseBtn.textContent = '▶';
+            localStorage.setItem('bgmPlaying', 'false');
+        }
+    });
+    
+    // 显示/隐藏音乐播放器
+    musicToggle.addEventListener('click', function() {
+        if (musicPlayer.style.display === 'none') {
+            musicPlayer.style.display = 'block';
+            musicToggle.style.display = 'none';
+        } else {
+            musicPlayer.style.display = 'none';
+        }
+    });
+    
+    // 显示/隐藏音量控制
+    volumeToggleBtn.addEventListener('click', function() {
+        volumeControl.style.display = volumeControl.style.display === 'none' ? 'block' : 'none';
+    });
+    
+    // 音量控制
+    volumeSlider.addEventListener('input', function() {
+        audio.volume = this.value;
+        localStorage.setItem('bgmVolume', this.value);
+        audio.muted = false;
+        updateVolumeIcon();
+    });
+    
+    // 静音切换
+    volumeToggleBtn.addEventListener('click', function(e) {
+        if (e.target !== volumeToggleBtn) return; // 防止与音量控制冲突
+        
+        audio.muted = !audio.muted;
+        localStorage.setItem('bgmMuted', audio.muted);
+        updateVolumeIcon();
+    });
+    
+    // 保存播放时间
+    audio.addEventListener('timeupdate', function() {
+        if (!audio.paused) {
+            localStorage.setItem('bgmTime', audio.currentTime);
+        }
+    });
+    
+    // 页面关闭前保存状态
+    window.addEventListener('beforeunload', function() {
+        localStorage.setItem('bgmTime', audio.currentTime);
+        localStorage.setItem('bgmPlaying', !audio.paused);
+    });
+    
+    // 更新音量图标
+    function updateVolumeIcon() {
+        if (audio.muted || audio.volume === 0) {
+            volumeToggleBtn.innerHTML = '🔇';
+        } else if (audio.volume < 0.5) {
+            volumeToggleBtn.innerHTML = '🔈';
+        } else {
+            volumeToggleBtn.innerHTML = '🔊';
+        }
+    }
+    
+    // 自动播放处理
+    function tryAutoPlay() {
+        if (isPlaying) {
+            audio.play().then(() => {
+                console.log('背景音乐已自动播放');
+            }).catch(e => {
+                console.log('自动播放被阻止，需要用户交互');
+                // 显示提示
+                musicTitle.innerHTML = '点击播放按钮播放音乐';
+            });
+        }
+    }
+    
+    // 用户首次交互后尝试播放
+    document.addEventListener('click', function firstInteraction() {
+        if (audio.paused && isPlaying) {
+            audio.play();
+            playPauseBtn.textContent = '⏸';
+        }
+        document.removeEventListener('click', firstInteraction);
+    }, { once: true });
+    
+    // 尝试自动播放
+    tryAutoPlay();
+});
+</script>
+</body>
+</html>
